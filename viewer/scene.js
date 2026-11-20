@@ -1,4 +1,4 @@
-import { makeAnnotations } from "./annotations.js";
+import { makeAnnotations } from "./annotations.js?v=2";
 import { makePortraits } from "./tray.js";
 import * as THREE from "three";
 import { GLTFLoader } from "../vendor/three/loaders/GLTFLoader.js";
@@ -275,7 +275,11 @@ export async function makeScene(host, url, manifest, events) {
           m.color.copy(d.color);
           if (!isOutside && state.palette === "atlas")
             m.color.set(manifest.systems[p.system].color);
-          m.transparent = ghost || fading || d.transparent;
+          const transparent = ghost || fading || d.transparent;
+          if (m.transparent !== transparent) {
+            m.transparent = transparent;
+            m.needsUpdate = true;
+          }
           m.opacity = ghost ? 0.09 : d.opacity * alpha;
           m.depthWrite = ghost || fading ? false : d.depthWrite;
           m.emissive.setHex(p.id === state.selected ? 0x20190c : 0);

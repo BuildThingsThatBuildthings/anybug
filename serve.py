@@ -34,6 +34,7 @@ class ViewerHandler(SimpleHTTPRequestHandler):
         return self.send_error(404)
 
     def end_headers(self):
+        self.send_header("Cache-Control", "no-cache")
         self.send_header("X-Content-Type-Options", "nosniff")
         super().end_headers()
 

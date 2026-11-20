@@ -1,5 +1,5 @@
 import { makeTray } from "./tray.js";
-import { makeScene } from "./scene.js";
+import { makeScene } from "./scene.js?v=2";
 import { icons } from "./icons.js";
 
 const el = (id) => document.getElementById(id);
@@ -475,7 +475,7 @@ el("guide").onclick = () => {
   showDialog("Field guide");
 };
 async function json(url) {
-  const response = await fetch(url);
+  const response = await fetch(url, { cache: "no-cache" });
   if (!response.ok) throw Error("Could not load " + url);
   return response.json();
 }
