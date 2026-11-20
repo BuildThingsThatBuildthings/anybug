@@ -22,6 +22,12 @@ Open **http://127.0.0.1:4179/** in a browser with WebGL 2. Python 3.9+ is suffic
 
 For a phone or tablet on the same trusted Wi-Fi, run `python3 serve.py --lan` and open `http://<computer-local-IP>:4179/` on that device. The server serves viewer assets only. Use `--port` to choose a different port.
 
+## Watch a behavior sequence
+
+Open either specimen and choose **Behavior**. The seven-spotted ladybug walks, lifts its spotted wing covers, unfolds its hindwings and makes a short flight. The European mantis turns its head, raises its forelegs, reaches and grasps. The motion is slowed so you can follow the joints. Choose an action to play it on its own, pause or scrub the timeline, or replay the whole sequence. **Back to dissection** returns to the pose and camera you were inspecting.
+
+The Blender masters contain named NLA tracks and timeline markers. The same native animation is embedded in each GLB, alongside its independent manual articulation clip. The local gallery and hosted viewer both play these assets.
+
 ## Explore the praying mantis
 
 Choose **Specimens → European praying mantis**, or open `http://127.0.0.1:4179/?specimen=european-mantis`. Drag either folded front leg up to open it halfway. Reverse the drag to close it while the opposite leg holds its pose. Use **See through** to find the muscle inside the grasping thigh. Choose **Break apart** to pull individual structures away and read all 59 names, then **Reassemble**. [Mantis anatomy and sources](specimens/european-mantis/README.md)

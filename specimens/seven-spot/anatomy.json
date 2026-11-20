@@ -830,5 +830,42 @@
       0.93,
       -1.2
     ]
+  },
+  "behavior": {
+    "clip": "AN_Ladybug_WalkToFlight",
+    "duration": 10,
+    "frameScale": 1.48,
+    "target": [
+      0,
+      1.8,
+      -1.15
+    ],
+    "actions": [
+      {
+        "name": "Walk",
+        "start": 0,
+        "note": "Follow one foot as it lifts, swings forward and touches down."
+      },
+      {
+        "name": "Unfold wings",
+        "start": 3.5,
+        "note": "The spotted covers lift first. The thin flight wings unfold beneath them."
+      },
+      {
+        "name": "Fly and land",
+        "start": 6,
+        "note": "Watch the hindwings beat, then fold back beneath the covers after landing."
+      }
+    ],
+    "references": [
+      [
+        "Walking feet · Mercer and Hosoda",
+        "https://doi.org/10.3390/biomimetics9030184"
+      ],
+      [
+        "Wing folding · Saito and colleagues",
+        "https://doi.org/10.1073/pnas.1620612114"
+      ]
+    ]
   }
 }

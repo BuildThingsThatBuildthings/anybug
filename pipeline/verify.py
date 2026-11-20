@@ -17,6 +17,28 @@ names = {node["name"] for node in gltf["nodes"] if "name" in node}
 assert brief["focus"] in {p["id"] for p in brief["parts"]}
 bpy.ops.wm.read_factory_settings(use_empty=True)
 bpy.ops.import_scene.gltf(filepath=str(folder / "specimen.glb"))
+if behavior := brief.get("behavior"):
+    clips = {clip["name"]: clip for clip in gltf["animations"]}
+    motion = clips[behavior["clip"]]
+    assert motion["channels"]
+    if brief["controls"]:
+        assert "Articulation" in clips
+    duration = max(gltf["accessors"][s["input"]]["max"][0] for s in motion["samplers"])
+    assert abs(duration - behavior["duration"]) < 1 / 24
+    starts = [a["start"] for a in behavior["actions"]]
+    assert starts[0] == 0 and starts == sorted(set(starts)) and starts[-1] < duration
+    # glTF import activates the first named clip. Test the independent manual
+    # hinges below at their own frames regardless of clip enumeration order.
+    for owner in [*bpy.context.scene.objects, *bpy.data.shape_keys]:
+        data = owner.animation_data
+        if data:
+            data.action = None
+            track = data.nla_tracks.get("Articulation")
+            if track:
+                strip = track.strips[0]
+                data.action = strip.action
+                data.action_slot = strip.action_slot
+    bpy.context.scene.frame_set(1)
 for p in brief["parts"]:
     assert p["id"] in names and p["short"] and p["detail"], p["id"]
     obj = bpy.data.objects[p["id"]]
@@ -35,6 +57,8 @@ for obj in bpy.context.scene.objects:
 
 animated = set()
 for clip in gltf.get("animations", []):
+    if behavior and clip["name"] != "Articulation":
+        continue
     for channel in clip["channels"]:
         target = channel["target"]
         animated.add(gltf["nodes"][target["node"]]["name"])

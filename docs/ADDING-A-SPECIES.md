@@ -9,3 +9,9 @@
 7. Run the viewer and open `/?specimen=YOUR-ID`. Compare intact, opened, and interior views beside the sources. Check both palettes, safe closure order, readable part names, and reassembly on a narrow touch viewport. Record remaining differences and asset licenses in the species notes.
 
 8. To add the specimen to Bugapedia, optionally include an original viewer render named `plate.webp` in the specimen directory. Run `npm run build:site` and check its new catalog card and shared specimen URL. Publish the reviewed model and notes. Keep the original observation in the private inbox.
+
+## Add behavior
+
+The ladybug and mantis builders include an optional `behavior.py`. Define `SEQUENCE` with a unique clip name, duration in seconds, a framing scale, a list of named actions with start times and observations, and motion references. Implement `pose(rig, t)` against the species' actual joints. Use the built-in frame rate and preserve continuity at chapter boundaries. The ladybug root travels forward and rises during flight. The mantis stays planted while its head and forelegs move.
+
+The build saves separate behavior and articulation NLA tracks, marks the chapters in Blender, and exports both clips into the GLB. Rebuild and verify the specimen, play every action in the viewer, then switch back to an opened or dissected specimen and check its pose.

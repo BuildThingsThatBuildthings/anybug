@@ -1,5 +1,6 @@
 import { makeTray } from "./tray.js";
-import { makeScene } from "./scene.js?v=2";
+import { makeScene } from "./scene.js?v=3";
+import { makeBehaviorPlayer } from "./behavior-player.js";
 import { icons } from "./icons.js";
 
 const el = (id) => document.getElementById(id);
@@ -32,6 +33,7 @@ let state = initial(),
   byId,
   showTray;
 let gestureBefore = null;
+let player;
 function remember(before) {
   previous.push(before);
   if (previous.length > 60) previous.shift();
@@ -69,6 +71,7 @@ function select(id, fromCanvas = false) {
   });
 }
 function setView(view) {
+  player?.close();
   if (state.view === view && !state.spread) return;
   change((s) => {
     s.view = view;
@@ -397,6 +400,7 @@ dialog.addEventListener("click", (e) => {
   if (e.target === dialog) dialog.close();
 });
 function showDialog(title) {
+  player?.pause();
   el("dialog-title").textContent = title;
   dialog.showModal();
 }
@@ -530,6 +534,8 @@ async function start() {
     select(id, true);
     el("stage").scrollIntoView({ block: "center" });
   });
+  if (specimen.behavior)
+    player = makeBehaviorPlayer(specimen.behavior, scene, render);
   el("status").hidden = true;
   el("stage").dataset.ready = "true";
   render();
@@ -540,6 +546,8 @@ start()
   .then(() => {
     interactive.forEach((b) => (b.disabled = false));
     render();
+    if (new URLSearchParams(location.search).get("mode") === "behavior")
+      player?.open();
   })
   .catch((error) => {
     console.error(error);

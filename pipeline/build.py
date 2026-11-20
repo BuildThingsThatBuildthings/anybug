@@ -10,6 +10,7 @@ from mathutils import Vector
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "pipeline"))
+from motion import build_behavior
 from geometry import group  # noqa: E402 - Blender starts outside the repository.
 
 folder = Path(sys.argv[sys.argv.index("--") + 1]).resolve()
@@ -58,6 +59,7 @@ verify_dependencies({pid: ctrl.get("requires") for pid, ctrl in controls.items()
 for part in parts:
     if "control" in part and part["control"] not in controls:
         raise ValueError(f"Unknown articulation for {part['id']}")
+has_behavior = build_behavior(folder, manifest)
 scene.frame_set(1)
 scene.world = bpy.data.worlds.new("Studio")
 # A useful starting view for anyone opening the editable master.
@@ -92,7 +94,8 @@ bpy.ops.export_scene.gltf(
     filepath=str(folder / "specimen.glb"),
     export_format="GLB",
     export_extras=True,
-    export_animation_mode="SCENE",
+    export_animation_mode="NLA_TRACKS" if has_behavior else "SCENE",
+    export_anim_slide_to_zero=True,
     export_anim_scene_split_object=False,
     export_frame_range=True,
     export_force_sampling=True,

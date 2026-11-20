@@ -335,7 +335,7 @@ aside {
   color: var(--rust);
   margin: 20px 0 3px;
 }
-.panel-title {
+.panel-title, .motion-heading {
   font: clamp(29px, 2.6vw, 43px)/1.12 var(--serif);
   letter-spacing: -0.035em;
   margin: 4px 0 10px;
@@ -930,4 +930,123 @@ input[type="range"] {
 .callout {
   touch-action: none;
   user-select: none;
+}
+
+.behavior-mode
+  :is(
+    .dissection-tools,
+    .bench-tools,
+    #annotations,
+    #pin,
+    .scale,
+    #label-pages,
+    #inspector,
+    #anatomy-key
+  ) {
+  display: none !important;
+}
+#transport {
+  padding: 14px 18px;
+  border-top: 1px solid var(--rule);
+}
+.motion-line,
+.motion-buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.motion-line {
+  justify-content: space-between;
+}
+.motion-line strong {
+  font: 22px/1.2 var(--serif);
+}
+#motion-time {
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+  color: #596151;
+}
+#motion-seek {
+  width: 100%;
+  height: 25px;
+  margin: 4px 0;
+  accent-color: var(--leaf);
+  cursor: pointer;
+}
+.motion-buttons {
+  flex-wrap: wrap;
+}
+.motion-buttons button {
+  font-size: 13px;
+  min-height: 36px;
+  padding: 6px 12px;
+}
+#motion-play {
+  min-width: 68px;
+}
+#motion-exit {
+  margin-left: auto;
+  text-decoration: underline;
+}
+#motion-guide {
+  padding-top: 16px;
+}
+#motion-guide h2 {
+  font-size: 30px;
+}
+#motion-guide .description {
+  font-size: 14px;
+}
+#motion-chapters {
+  margin: 16px 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--rule);
+}
+#motion-chapters button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--rule);
+  border-left: 3px solid transparent;
+}
+#motion-chapters button[aria-current] {
+  background: #eaf0df;
+  border-left-color: var(--leaf);
+}
+#motion-chapters strong,
+#motion-chapters span {
+  display: block;
+}
+#motion-chapters span {
+  font-size: 13px;
+  color: #4d5548;
+  margin-top: 3px;
+}
+#motion-guide details {
+  font-size: 13px;
+}
+#motion-guide summary {
+  cursor: pointer;
+}
+@media (max-width: 540px) {
+  #transport {
+    padding: 10px;
+  }
+  .motion-buttons {
+    gap: 4px;
+  }
+  .motion-buttons button {
+    padding: 5px 7px;
+  }
+  .view-switch button {
+    padding-inline: 8px;
+  }
+}
+.behavior-mode #viewport {
+  top: 54px;
+}
+.behavior-mode .view-switch {
+  top: 6px;
 }

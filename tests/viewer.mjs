@@ -4,6 +4,7 @@ import { mkdir } from "node:fs/promises";
 import { once } from "node:events";
 import { fileURLToPath } from "node:url";
 import { createHash } from "node:crypto";
+import { checkBehaviors } from "./behavior.mjs";
 import { checkMantis } from "./mantis.mjs";
 const { chromium, webkit } = await import(
   process.env.PLAYWRIGHT_MODULE || "playwright"
@@ -119,6 +120,7 @@ try {
       const btn = page.locator('[data-part="' + id + '"]');
       if (touch) await btn.tap();
       else await btn.click();
+      await frames(); // Selection markers update in the next WebGL frame.
     };
     const pin = () =>
       page.locator("#pin").evaluate((el) => [el.style.left, el.style.top]);
@@ -400,6 +402,13 @@ try {
       geometryImage,
       assertReassembled,
     });
+    await checkBehaviors({
+      page,
+      base,
+      frames,
+      geometryImage,
+      assertReassembled,
+    });
     assert.deepEqual(errors, []);
     assert.deepEqual(remote, []);
     for (const path of [
@@ -413,7 +422,7 @@ try {
       engine +
         " " +
         name +
-        ": passed ladybug and mantis dissection, independent leg motion, labels, palettes, reset and local-only loading.",
+        ": passed ladybug and mantis dissection, behavior playback, chapter replay, pose restoration, labels and local-only loading.",
     );
     await page.close();
   }

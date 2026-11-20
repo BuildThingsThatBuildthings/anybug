@@ -92,15 +92,15 @@ export async function makeScene(host, url, manifest, events) {
   controls.maxZoom = 6;
   controls.rotateSpeed = 0.8;
   const target = vector(manifest.view.target);
-  function home() {
+  function home(lookAt = target) {
     camera.position.copy(
       vector(manifest.view.direction)
         .normalize()
         .multiplyScalar(manifest.view.radius * 4)
-        .add(target),
+        .add(lookAt),
     );
     camera.zoom = 1;
-    controls.target.copy(target);
+    controls.target.copy(lookAt);
     camera.updateProjectionMatrix();
     controls.update();
   }
@@ -108,6 +108,28 @@ export async function makeScene(host, url, manifest, events) {
   const gltf = await new GLTFLoader().loadAsync(url);
   const scale = new THREE.Group();
   scale.scale.setScalar(1000);
+  // The intact actor shares geometry and textures with the dissection model.
+  // Its original hierarchy keeps baked local-space joint and morph tracks valid.
+  const behaviorClip =
+    manifest.behavior &&
+    THREE.AnimationClip.findByName(gltf.animations, manifest.behavior.clip);
+  if (manifest.behavior && !behaviorClip)
+    throw Error("Missing specimen behavior clip");
+  const actor = behaviorClip ? gltf.scene.clone(true) : null;
+  let actorMixer, performanceAction, savedView;
+  if (actor) {
+    actor.visible = false;
+    actor.traverse((o) => {
+      if (o.isMesh) o.castShadow = true;
+    });
+    scale.add(actor);
+    actorMixer = new THREE.AnimationMixer(actor);
+    performanceAction = actorMixer.clipAction(behaviorClip);
+    performanceAction.setLoop(THREE.LoopOnce, 1);
+    performanceAction.clampWhenFinished = true;
+    performanceAction.play();
+    performanceAction.paused = true;
+  }
   scale.add(gltf.scene);
   world.add(scale);
   scale.updateMatrixWorld(true);
@@ -155,6 +177,7 @@ export async function makeScene(host, url, manifest, events) {
           .getCenter(new THREE.Vector3())
       : center.clone();
     const tracks = gltf.animations
+      .filter((clip) => clip !== behaviorClip)
       .flatMap((a) => a.tracks)
       .filter((t) =>
         animationTargets.has(
@@ -222,15 +245,18 @@ export async function makeScene(host, url, manifest, events) {
       current?.view === "outside"
         ? Math.max(0, ...Object.values(current.open).map(Number))
         : 0;
-    const half =
+    const margin = actor?.visible
+      ? manifest.behavior.frameScale
+      : 1 +
+        (manifest.view.openingMargin ?? 0.37) * opening +
+        1.05 * spreadAmount;
+    const frame =
       manifest.view.radius *
       Math.max(manifest.view.minFrame ?? 0.87, 1.05 / aspect) *
-      (1 +
-        (manifest.view.openingMargin ?? 0.37) * opening +
-        1.05 * spreadAmount);
-    camera.top = half;
-    camera.bottom = -half;
-    camera.right = half * aspect;
+      margin;
+    camera.top = frame;
+    camera.bottom = -frame;
+    camera.right = frame * aspect;
     camera.left = -camera.right;
     camera.updateProjectionMatrix();
     if (
@@ -291,10 +317,49 @@ export async function makeScene(host, url, manifest, events) {
     }
     invalidate();
   }
+  function sampleBehavior(time) {
+    if (!actor) return;
+    if (time === null) {
+      if (!actor.visible) return;
+      actor.visible = false;
+      gltf.scene.visible = true;
+      floor.visible = spreadAmount < 0.01;
+      camera.position.copy(savedView.position);
+      controls.target.copy(savedView.target);
+      camera.zoom = savedView.zoom;
+      controls.update();
+      resize();
+    } else {
+      if (!actor.visible) {
+        savedView = {
+          position: camera.position.clone(),
+          target: controls.target.clone(),
+          zoom: camera.zoom,
+        };
+        actor.visible = true;
+        gltf.scene.visible = false;
+        floor.visible = true;
+        home(
+          manifest.behavior.target ? vector(manifest.behavior.target) : target,
+        );
+        resize();
+      }
+      performanceAction.time = Math.min(time, behaviorClip.duration);
+      actorMixer.update(0);
+    }
+    invalidate();
+  }
   let gesture = null;
   function draw() {
     requestAnimationFrame(draw);
     if (!current || document.hidden) return;
+    if (actor?.visible) {
+      if (dirty) {
+        renderer.render(world, camera);
+        dirty = false;
+      }
+      return;
+    }
     let moving = false;
     const desired = Number(current.spread);
     if (spreadAmount !== desired) {
@@ -428,7 +493,7 @@ export async function makeScene(host, url, manifest, events) {
       tap = null;
       return;
     }
-    if (!current) return;
+    if (!current || actor?.visible) return;
     const label = e.target.closest?.("[data-label]");
     rayAt(e);
     const id = label?.dataset.label || pick(e);
@@ -514,6 +579,7 @@ export async function makeScene(host, url, manifest, events) {
     surface.addEventListener("lostpointercapture", finish);
   }
   return {
+    sampleBehavior,
     apply,
     portrait,
     home,

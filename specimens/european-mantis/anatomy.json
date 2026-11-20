@@ -1082,5 +1082,37 @@
     "openingMargin": 0.14,
     "minFrame": 0.75,
     "narrowLabelRails": true
+  },
+  "behavior": {
+    "clip": "AN_Mantis_TrackAndGrasp",
+    "duration": 8,
+    "frameScale": 1.06,
+    "actions": [
+      {
+        "name": "Scan",
+        "start": 0,
+        "note": "Watch the triangular head turn while the walking legs stay planted."
+      },
+      {
+        "name": "Take aim",
+        "start": 3,
+        "note": "The mantis faces forward and raises its folded grasping legs."
+      },
+      {
+        "name": "Reach and grasp",
+        "start": 5,
+        "note": "The forelegs sweep out. The spined shins close against the thighs before the legs draw back."
+      }
+    ],
+    "references": [
+      [
+        "Visual tracking in mantids · Behavioral Ecology",
+        "https://doi.org/10.1093/beheco/araf107"
+      ],
+      [
+        "Approach and sweep · Comparative mantis strike recordings",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC7280040/"
+      ]
+    ]
   }
 }
