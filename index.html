@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#f8f7f0" />
+    <title>AnyBug · Specimen explorer</title>
+    <link rel="icon" href="viewer/mark.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="viewer/style.css" />
+    <script type="importmap">
+      { "imports": { "three": "./vendor/three/build/three.module.min.js" } }
+    </script>
+  </head>
+  <body>
+    <header>
+      <div class="header-inner">
+        <a class="brand" href="./" aria-label="AnyBug home"
+          ><img alt="" src="viewer/mark.svg" />AnyBug</a
+        ><button class="guide-link" id="guide">
+          <i data-icon="book"></i>Field guide
+        </button>
+      </div>
+    </header>
+    <main>
+      <section class="heading">
+        <div>
+          <div class="section-label">
+            <span class="ink-line"></span> Specimen explorer
+          </div>
+          <h1 id="name">Specimen explorer</h1>
+          <p id="scientific" class="latin"></p>
+        </div>
+        <div id="stage-label" class="stage-label"></div>
+      </section>
+      <div class="workspace">
+        <section class="workbench" aria-label="Interactive dissection">
+          <div id="stage" class="stage" data-ready="false">
+            <div class="view-switch" aria-label="Specimen view">
+              <button id="outside" aria-pressed="true">
+                <i data-icon="bug"></i>Exterior</button
+              ><button id="inside" aria-pressed="false">
+                <i data-icon="layers"></i>Interior
+              </button>
+            </div>
+            <div
+              id="viewport"
+              tabindex="0"
+              aria-label="3D specimen. Drag a cover up to open it, drag a part to move it, or drag empty space to orbit. Use Browse parts for keyboard selection."
+            ></div>
+            <div id="status" role="status">Loading specimen…</div>
+            <div id="annotations" aria-label="Specimen labels">
+              <svg id="leaders" aria-hidden="true"></svg>
+              <div id="callouts"></div>
+            </div>
+            <span id="pin" hidden></span>
+            <div class="scale" aria-label="Scale bar">
+              <span id="scale-bar"></span><small id="scale-text"></small>
+            </div>
+            <div id="label-pages" hidden aria-label="Anatomy labels">
+              <button id="labels-prev" aria-label="Previous labels">‹</button
+              ><output id="label-range"></output
+              ><button id="labels-next" aria-label="Next labels">›</button>
+            </div>
+            <div class="zoom">
+              <button id="zoom-out" aria-label="Zoom out">−</button
+              ><button id="zoom-in" aria-label="Zoom in">+</button>
+            </div>
+          </div>
+          <div class="dissection-tools" aria-label="Dissection controls">
+            <button id="spread" aria-pressed="false">
+              <i data-icon="layers"></i><span>Break apart</span>
+            </button>
+            <button id="labels" aria-pressed="true">Labels</button>
+            <div class="shell-control">
+              <button id="translucent" aria-pressed="false">See through</button>
+              <label class="opacity-caption" for="opacity">Shell opacity</label
+              ><input
+                id="opacity"
+                type="range"
+                min="0"
+                max="100"
+                value="100"
+                aria-label="Shell opacity"
+              />
+              <output for="opacity" id="opacity-value">100%</output>
+            </div>
+          </div>
+          <div class="bench-tools">
+            <span class="hint"
+              ><i data-icon="rotate"></i
+              ><span id="interaction-hint"
+                >Drag a part to move it · Drag empty space to orbit</span
+              ></span
+            >
+            <div>
+              <button id="undo" disabled><i data-icon="undo"></i>Undo</button
+              ><button id="reset"><i data-icon="reset"></i>Reassemble</button>
+            </div>
+          </div>
+        </section>
+        <aside id="inspector" aria-label="Specimen inspector">
+          <div class="panel-top">
+            <span class="section-label"
+              ><i data-icon="notes"></i>Field notes</span
+            ><button id="browse" class="browse" title="Find an anatomical part">
+              <i data-icon="list"></i>Browse parts
+            </button>
+          </div>
+          <div id="notes" aria-live="polite"></div>
+          <div id="palette" hidden>
+            <span class="small-label">Interior colors</span>
+            <div class="palette-switch">
+              <button id="atlas" aria-pressed="true">
+                <i data-icon="swatch"></i>Atlas</button
+              ><button id="natural" aria-pressed="false">
+                <i data-icon="droplet"></i>Natural
+              </button>
+            </div>
+            <small id="palette-note"></small>
+          </div>
+        </aside>
+      </div>
+      <section id="anatomy-key" hidden aria-labelledby="key-heading">
+        <div class="key-heading">
+          <div>
+            <span class="section-label">Dissection tray</span>
+            <h2 id="key-heading" tabindex="-1">Anatomy key</h2>
+          </div>
+          <label
+            >Body system
+            <select id="key-system"></select
+          ></label>
+        </div>
+        <div id="key-parts"></div>
+      </section>
+    </main>
+    <dialog id="dialog">
+      <div class="dialog-head">
+        <h2 id="dialog-title"></h2>
+        <button id="close" aria-label="Close dialog">×</button>
+      </div>
+      <div id="dialog-body"></div>
+    </dialog>
+    <noscript
+      >Enable JavaScript to use the interactive specimen viewer.</noscript
+    >
+    <script type="module" src="viewer/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "name": "anybug",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "test": "node tests/viewer.mjs"
+  },
+  "devDependencies": {
+    "playwright": "1.61.1"
+  }
+}

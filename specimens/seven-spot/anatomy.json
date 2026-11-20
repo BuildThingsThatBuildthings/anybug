@@ -1,0 +1,834 @@
+{
+  "id": "seven-spot",
+  "name": "Seven-spotted ladybug",
+  "scientific": "Coccinella septempunctata",
+  "stage": "Adult female",
+  "lengthMm": 7,
+  "model": "specimen.glb",
+  "focus": "cover_l",
+  "landmarks": [
+    "cover_l",
+    "head",
+    "antenna_r",
+    "leg_l1"
+  ],
+  "spread": {
+    "head": [
+      0,
+      0.8,
+      -3.6
+    ],
+    "pronotum": [
+      0,
+      3.1,
+      -2.2
+    ],
+    "tergites": [
+      0,
+      4.5,
+      1.4
+    ],
+    "sternites": [
+      0,
+      -3.2,
+      1.3
+    ],
+    "foregut": [
+      -0.65,
+      0.2,
+      -1.2
+    ],
+    "gizzard": [
+      1.0,
+      0.3,
+      -0.65
+    ],
+    "midgut": [
+      0,
+      0.45,
+      1.65
+    ],
+    "hindgut": [
+      0.9,
+      -0.2,
+      2.85
+    ],
+    "rectum": [
+      1.55,
+      -0.4,
+      3.5
+    ],
+    "malpighian": [
+      -2.25,
+      0.55,
+      3.3
+    ],
+    "airways": [
+      -3.15,
+      -0.6,
+      0.1
+    ],
+    "spiracles": [
+      -4.3,
+      -0.3,
+      0.15
+    ],
+    "dorsal_vessel": [
+      0.55,
+      2.1,
+      0.5
+    ],
+    "brain": [
+      0.65,
+      1.15,
+      -2.2
+    ],
+    "nerve_cord": [
+      0,
+      -1.55,
+      0.4
+    ],
+    "flight_muscles": [
+      2.45,
+      1.2,
+      -1.25
+    ],
+    "oviduct": [
+      1.8,
+      -0.5,
+      3.1
+    ],
+    "fat_body": [
+      2.45,
+      -0.45,
+      1.4
+    ],
+    "cover_l": [
+      -3.45,
+      2.6,
+      0.75
+    ],
+    "wing_l": [
+      -3.0,
+      1.25,
+      -0.6
+    ],
+    "eye_l": [
+      -1.05,
+      0.25,
+      -0.05
+    ],
+    "antenna_l": [
+      -1.4,
+      0.85,
+      -0.95
+    ],
+    "jaw_l": [
+      -0.45,
+      -0.25,
+      -0.97
+    ],
+    "palp_l": [
+      -1.1,
+      -0.35,
+      -1.55
+    ],
+    "ovary_l": [
+      -2.55,
+      0.55,
+      2.2
+    ],
+    "leg_l0": [
+      -3.25,
+      -0.85,
+      -1.7
+    ],
+    "foot_l0": [
+      -1.2,
+      -0.3,
+      -0.33
+    ],
+    "leg_l1": [
+      -3.25,
+      -0.85,
+      0.0
+    ],
+    "foot_l1": [
+      -1.2,
+      -0.3,
+      0.0
+    ],
+    "leg_l2": [
+      -3.25,
+      -0.85,
+      1.7
+    ],
+    "foot_l2": [
+      -1.2,
+      -0.3,
+      0.33
+    ],
+    "cover_r": [
+      3.45,
+      2.6,
+      0.75
+    ],
+    "wing_r": [
+      3.0,
+      1.25,
+      -0.6
+    ],
+    "eye_r": [
+      1.05,
+      0.25,
+      -0.05
+    ],
+    "antenna_r": [
+      1.4,
+      0.85,
+      -0.95
+    ],
+    "jaw_r": [
+      0.45,
+      -0.25,
+      -0.97
+    ],
+    "palp_r": [
+      1.1,
+      -0.35,
+      -1.55
+    ],
+    "ovary_r": [
+      2.55,
+      0.55,
+      2.2
+    ],
+    "leg_r0": [
+      3.25,
+      -0.85,
+      -1.7
+    ],
+    "foot_r0": [
+      1.2,
+      -0.3,
+      -0.33
+    ],
+    "leg_r1": [
+      3.25,
+      -0.85,
+      0.0
+    ],
+    "foot_r1": [
+      1.2,
+      -0.3,
+      0.0
+    ],
+    "leg_r2": [
+      3.25,
+      -0.85,
+      1.7
+    ],
+    "foot_r2": [
+      1.2,
+      -0.3,
+      0.33
+    ]
+  },
+  "title": "Beneath the spots",
+  "overview": "Lift a spotted wing cover to discover the folded flight wing underneath.",
+  "controls": {
+    "cover_l": {
+      "open": "Lift cover",
+      "close": "Lower cover"
+    },
+    "cover_r": {
+      "open": "Lift cover",
+      "close": "Lower cover"
+    },
+    "wing_l": {
+      "open": "Unfold wing",
+      "close": "Fold wing",
+      "requires": "cover_l"
+    },
+    "wing_r": {
+      "open": "Unfold wing",
+      "close": "Fold wing",
+      "requires": "cover_r"
+    }
+  },
+  "systems": {
+    "exterior": {
+      "name": "Exterior",
+      "color": "#b94324"
+    },
+    "digestive": {
+      "name": "Digestion",
+      "color": "#e49339"
+    },
+    "excretory": {
+      "name": "Waste removal",
+      "color": "#bd9b23"
+    },
+    "respiratory": {
+      "name": "Breathing",
+      "color": "#4caa9e"
+    },
+    "circulatory": {
+      "name": "Circulation",
+      "color": "#d55760"
+    },
+    "nervous": {
+      "name": "Senses & nerves",
+      "color": "#8871b3"
+    },
+    "muscular": {
+      "name": "Movement",
+      "color": "#c67883"
+    },
+    "reproductive": {
+      "name": "Reproduction",
+      "color": "#6c9a57"
+    },
+    "storage": {
+      "name": "Energy storage",
+      "color": "#b38e5d"
+    }
+  },
+  "sources": {
+    "uc": [
+      "UC IPM · Identifying the seven-spotted lady beetle",
+      "https://ipm.ucanr.edu/natural-enemies/sevenspotted-lady-beetle/"
+    ],
+    "fold": [
+      "Saito et al. · Wing folding in the seven-spotted ladybird",
+      "https://doi.org/10.1073/pnas.1620612114"
+    ],
+    "bell": [
+      "Bell et al. · Dissection and micro-CT of the seven-spotted ladybird",
+      "https://doi.org/10.1155/2012/348348"
+    ],
+    "gut": [
+      "Pradhan · The alimentary canal of C. septempunctata",
+      "https://www.zin.ru/animalia/coleoptera/ADDPAGES/Andrey_Ukrainsky_Library/References_files/Pradhan39b.pdf"
+    ],
+    "beetle": [
+      "Arizona State University · Tiger beetle anatomy",
+      "https://askabiologist.asu.edu/tiger-beetle-anatomy"
+    ],
+    "brain": [
+      "NC State · Insect nervous system",
+      "https://genent.cals.ncsu.edu/bug-bytes/nervous-system/"
+    ],
+    "air": [
+      "NC State · Insect respiratory system",
+      "https://genent.cals.ncsu.edu/bug-bytes/respiratory-system/"
+    ],
+    "blood": [
+      "NC State · Insect circulatory system",
+      "https://genent.cals.ncsu.edu/bug-bytes/circulatory-system/"
+    ],
+    "female": [
+      "NC State · Female insect anatomy",
+      "https://genent.cals.ncsu.edu/bug-bytes/reproductive-system/females/"
+    ]
+  },
+  "parts": [
+    {
+      "id": "head",
+      "name": "Head capsule",
+      "term": "Head capsule",
+      "system": "exterior",
+      "parent": null,
+      "source": "uc",
+      "evidence": "Species reference",
+      "short": "The head holds the eyes, feelers, and chewing mouth.",
+      "detail": "The hard capsule encloses the front of the nervous system. Lift it to see where signals from the eyes and antennae meet."
+    },
+    {
+      "id": "pronotum",
+      "name": "Shoulder shield",
+      "term": "Pronotum",
+      "system": "exterior",
+      "parent": null,
+      "source": "uc",
+      "evidence": "Species reference",
+      "short": "This dark shield sits just behind the ladybug’s head.",
+      "detail": "The pronotum covers the first thoracic segment. Its pale patches help distinguish this species."
+    },
+    {
+      "id": "tergites",
+      "name": "Abdominal back plates",
+      "term": "Tergites",
+      "system": "exterior",
+      "parent": null,
+      "source": "fold",
+      "evidence": "Species reference",
+      "short": "These plates lie under the folded wings and cover the soft organs.",
+      "detail": "The abdominal plates can move relative to one another. The living beetle uses abdominal movements while folding the hindwings."
+    },
+    {
+      "id": "sternites",
+      "name": "Belly plates",
+      "term": "Ventral cuticle",
+      "system": "exterior",
+      "parent": null,
+      "source": "beetle",
+      "evidence": "Comparative reconstruction",
+      "short": "These plates protect the underside of the ladybug.",
+      "detail": "The cuticle is the outer skeleton. The plate edges show where neighbouring body segments meet."
+    },
+    {
+      "id": "cover_l",
+      "name": "Left wing cover",
+      "term": "Elytron",
+      "system": "exterior",
+      "parent": null,
+      "source": "fold",
+      "evidence": "Species reference",
+      "short": "Lift the spotted cover to find a thin flying wing tucked underneath.",
+      "detail": "Each cover is a hardened front wing. Its inside surface helps guide the soft hindwing into folds as the beetle packs it away."
+    },
+    {
+      "id": "wing_l",
+      "name": "Left flight wing",
+      "term": "Hindwing",
+      "system": "exterior",
+      "parent": null,
+      "source": "fold",
+      "evidence": "Species reference",
+      "short": "This thin wing unfolds into a much bigger flying surface.",
+      "detail": "Stiffened veins support the membrane in flight. Several folds let the wing fit under a much shorter cover. The animation simplifies the sequence seen on high-speed film."
+    },
+    {
+      "id": "eye_l",
+      "name": "Left compound eye",
+      "term": "Compound eye",
+      "system": "exterior",
+      "parent": "head",
+      "source": "beetle",
+      "evidence": "Comparative reconstruction",
+      "short": "Many tiny lenses gather little pieces of the view.",
+      "detail": "Each facet admits light to a visual unit. The facets in this model are enlarged so you can see the pattern."
+    },
+    {
+      "id": "antenna_l",
+      "name": "Left feeler",
+      "term": "Antenna",
+      "system": "exterior",
+      "parent": "head",
+      "source": "beetle",
+      "evidence": "Comparative reconstruction",
+      "short": "A ladybug uses its feelers to sample the world around it.",
+      "detail": "The joints carry sensory structures. Compare the wider club at the tip with the narrower segments near the base."
+    },
+    {
+      "id": "jaw_l",
+      "name": "Left chewing jaw",
+      "term": "Mandible",
+      "system": "exterior",
+      "parent": "head",
+      "source": "beetle",
+      "evidence": "Comparative reconstruction",
+      "short": "These jaws meet from the sides to bite food.",
+      "detail": "An adult seven-spotted ladybug eats soft-bodied prey including aphids. Paired mandibles work beside the other mouthparts."
+    },
+    {
+      "id": "palp_l",
+      "name": "Left mouth feeler",
+      "term": "Maxillary palp",
+      "system": "exterior",
+      "parent": "head",
+      "source": "beetle",
+      "evidence": "Comparative reconstruction",
+      "short": "This tiny feeler helps examine a bite of food.",
+      "detail": "The paired palps sit close to the jaws. Their sensory surfaces sample food as it passes into the mouth."
+    },
+    {
+      "id": "leg_l0",
+      "name": "Left front leg",
+      "term": "Thoracic leg",
+      "system": "exterior",
+      "parent": null,
+      "source": "beetle",
+      "evidence": "Comparative reconstruction",
+      "short": "Follow this jointed leg from the body down to the foot.",
+      "detail": "Three pairs of legs attach to the thorax. The long femur and tibia act as levers when muscles pull across a joint."
+    },
+    {
+      "id": "foot_l0",
+      "name": "Left front foot",
+      "term": "Tarsus and claws",
+      "system": "exterior",
+      "parent": "leg_l0",
+      "source": "beetle",
+      "evidence": "Comparative reconstruction",
+      "short": "Look for the curved claws at the very end.",
+      "detail": "The foot has small segments and gripping surfaces. The separate claws help the beetle catch on uneven surfaces."
+    },
+    {
+      "id": "leg_l1",
+      "name": "Left middle leg",
+      "term": "Thoracic leg",
+      "system": "exterior",
+      "parent": null,
+      "source": "beetle",
+      "evidence": "Comparative reconstruction",
+      "short": "Follow this jointed leg from the body down to the foot.",
+      "detail": "Three pairs of legs attach to the thorax. The long femur and tibia act as levers when muscles pull across a joint."
+    },
+    {
+      "id": "foot_l1",
+      "name": "Left middle foot",
+      "term": "Tarsus and claws",
+      "system": "exterior",
+      "parent": "leg_l1",
+      "source": "beetle",
+      "evidence": "Comparative reconstruction",
+      "short": "Look for the curved claws at the very end.",
+      "detail": "The foot has small segments and gripping surfaces. The separate claws help the beetle catch on uneven surfaces."
+    },
+    {
+      "id": "leg_l2",
+      "name": "Left rear leg",
+      "term": "Thoracic leg",
+      "system": "exterior",
+      "parent": null,
+      "source": "beetle",
+      "evidence": "Comparative reconstruction",
+      "short": "Follow this jointed leg from the body down to the foot.",
+      "detail": "Three pairs of legs attach to the thorax. The long femur and tibia act as levers when muscles pull across a joint."
+    },
+    {
+      "id": "foot_l2",
+      "name": "Left rear foot",
+      "term": "Tarsus and claws",
+      "system": "exterior",
+      "parent": "leg_l2",
+      "source": "beetle",
+      "evidence": "Comparative reconstruction",
+      "short": "Look for the curved claws at the very end.",
+      "detail": "The foot has small segments and gripping surfaces. The separate claws help the beetle catch on uneven surfaces."
+    },
+    {
+      "id": "cover_r",
+      "name": "Right wing cover",
+      "term": "Elytron",
+      "system": "exterior",
+      "parent": null,
+      "source": "fold",
+      "evidence": "Species reference",
+      "short": "Lift the spotted cover to find a thin flying wing tucked underneath.",
+      "detail": "Each cover is a hardened front wing. Its inside surface helps guide the soft hindwing into folds as the beetle packs it away."
+    },
+    {
+      "id": "wing_r",
+      "name": "Right flight wing",
+      "term": "Hindwing",
+      "system": "exterior",
+      "parent": null,
+      "source": "fold",
+      "evidence": "Species reference",
+      "short": "This thin wing unfolds into a much bigger flying surface.",
+      "detail": "Stiffened veins support the membrane in flight. Several folds let the wing fit under a much shorter cover. The animation simplifies the sequence seen on high-speed film."
+    },
+    {
+      "id": "eye_r",
+      "name": "Right compound eye",
+      "term": "Compound eye",
+      "system": "exterior",
+      "parent": "head",
+      "source": "beetle",
+      "evidence": "Comparative reconstruction",
+      "short": "Many tiny lenses gather little pieces of the view.",
+      "detail": "Each facet admits light to a visual unit. The facets in this model are enlarged so you can see the pattern."
+    },
+    {
+      "id": "antenna_r",
+      "name": "Right feeler",
+      "term": "Antenna",
+      "system": "exterior",
+      "parent": "head",
+      "source": "beetle",
+      "evidence": "Comparative reconstruction",
+      "short": "A ladybug uses its feelers to sample the world around it.",
+      "detail": "The joints carry sensory structures. Compare the wider club at the tip with the narrower segments near the base."
+    },
+    {
+      "id": "jaw_r",
+      "name": "Right chewing jaw",
+      "term": "Mandible",
+      "system": "exterior",
+      "parent": "head",
+      "source": "beetle",
+      "evidence": "Comparative reconstruction",
+      "short": "These jaws meet from the sides to bite food.",
+      "detail": "An adult seven-spotted ladybug eats soft-bodied prey including aphids. Paired mandibles work beside the other mouthparts."
+    },
+    {
+      "id": "palp_r",
+      "name": "Right mouth feeler",
+      "term": "Maxillary palp",
+      "system": "exterior",
+      "parent": "head",
+      "source": "beetle",
+      "evidence": "Comparative reconstruction",
+      "short": "This tiny feeler helps examine a bite of food.",
+      "detail": "The paired palps sit close to the jaws. Their sensory surfaces sample food as it passes into the mouth."
+    },
+    {
+      "id": "leg_r0",
+      "name": "Right front leg",
+      "term": "Thoracic leg",
+      "system": "exterior",
+      "parent": null,
+      "source": "beetle",
+      "evidence": "Comparative reconstruction",
+      "short": "Follow this jointed leg from the body down to the foot.",
+      "detail": "Three pairs of legs attach to the thorax. The long femur and tibia act as levers when muscles pull across a joint."
+    },
+    {
+      "id": "foot_r0",
+      "name": "Right front foot",
+      "term": "Tarsus and claws",
+      "system": "exterior",
+      "parent": "leg_r0",
+      "source": "beetle",
+      "evidence": "Comparative reconstruction",
+      "short": "Look for the curved claws at the very end.",
+      "detail": "The foot has small segments and gripping surfaces. The separate claws help the beetle catch on uneven surfaces."
+    },
+    {
+      "id": "leg_r1",
+      "name": "Right middle leg",
+      "term": "Thoracic leg",
+      "system": "exterior",
+      "parent": null,
+      "source": "beetle",
+      "evidence": "Comparative reconstruction",
+      "short": "Follow this jointed leg from the body down to the foot.",
+      "detail": "Three pairs of legs attach to the thorax. The long femur and tibia act as levers when muscles pull across a joint."
+    },
+    {
+      "id": "foot_r1",
+      "name": "Right middle foot",
+      "term": "Tarsus and claws",
+      "system": "exterior",
+      "parent": "leg_r1",
+      "source": "beetle",
+      "evidence": "Comparative reconstruction",
+      "short": "Look for the curved claws at the very end.",
+      "detail": "The foot has small segments and gripping surfaces. The separate claws help the beetle catch on uneven surfaces."
+    },
+    {
+      "id": "leg_r2",
+      "name": "Right rear leg",
+      "term": "Thoracic leg",
+      "system": "exterior",
+      "parent": null,
+      "source": "beetle",
+      "evidence": "Comparative reconstruction",
+      "short": "Follow this jointed leg from the body down to the foot.",
+      "detail": "Three pairs of legs attach to the thorax. The long femur and tibia act as levers when muscles pull across a joint."
+    },
+    {
+      "id": "foot_r2",
+      "name": "Right rear foot",
+      "term": "Tarsus and claws",
+      "system": "exterior",
+      "parent": "leg_r2",
+      "source": "beetle",
+      "evidence": "Comparative reconstruction",
+      "short": "Look for the curved claws at the very end.",
+      "detail": "The foot has small segments and gripping surfaces. The separate claws help the beetle catch on uneven surfaces."
+    },
+    {
+      "id": "foregut",
+      "name": "Food passage",
+      "term": "Foregut",
+      "system": "digestive",
+      "parent": null,
+      "source": "gut",
+      "evidence": "Species reference",
+      "short": "Start here to follow a bite from the mouth into the body.",
+      "detail": "The foregut carries food toward the midgut. Its entrance lies between the mouthparts and below the brain."
+    },
+    {
+      "id": "gizzard",
+      "name": "Food grinder",
+      "term": "Proventriculus",
+      "system": "digestive",
+      "parent": null,
+      "source": "bell",
+      "evidence": "Species reference",
+      "short": "Food passes through this muscular chamber on its way into the midgut.",
+      "detail": "This part sits between the narrow food passage and the wider midgut. You can see the change in width in the published dissection."
+    },
+    {
+      "id": "midgut",
+      "name": "Digesting tube",
+      "term": "Midgut",
+      "system": "digestive",
+      "parent": null,
+      "source": "gut",
+      "evidence": "Species reference",
+      "short": "Food breaks down here and nutrients pass into the body.",
+      "detail": "This winding tube provides space for digestion and absorption inside a very short animal."
+    },
+    {
+      "id": "hindgut",
+      "name": "Rear gut",
+      "term": "Hindgut",
+      "system": "digestive",
+      "parent": null,
+      "source": "gut",
+      "evidence": "Species reference",
+      "short": "The last stretch takes water back from the food leftovers.",
+      "detail": "The hindgut leads toward the rear opening. The waste-removal tubes connect near its junction with the midgut."
+    },
+    {
+      "id": "rectum",
+      "name": "Last gut chamber",
+      "term": "Rectum",
+      "system": "digestive",
+      "parent": null,
+      "source": "bell",
+      "evidence": "Species reference",
+      "short": "This is the last chamber before waste leaves the body.",
+      "detail": "Follow the hindgut to this wider chamber at the back of the abdomen. It is visible in the dissected alimentary canal."
+    },
+    {
+      "id": "malpighian",
+      "name": "Waste-removal tubes",
+      "term": "Malpighian tubules",
+      "system": "excretory",
+      "parent": null,
+      "source": "bell",
+      "evidence": "Species reference",
+      "short": "These fine tubes help clean the fluid inside the beetle.",
+      "detail": "Dissections of this species show long looping tubules closely associated with the gut. The loops here summarize their path."
+    },
+    {
+      "id": "airways",
+      "name": "Air tubes",
+      "term": "Tracheal trunks and branches",
+      "system": "respiratory",
+      "parent": null,
+      "source": "air",
+      "evidence": "Comparative reconstruction",
+      "short": "Follow the branching tubes that bring air close to body tissues.",
+      "detail": "Air enters through openings in the body wall. The branching network reaches tissues directly. Only the larger paths are illustrated."
+    },
+    {
+      "id": "spiracles",
+      "name": "Breathing openings",
+      "term": "Spiracles",
+      "system": "respiratory",
+      "parent": null,
+      "source": "air",
+      "evidence": "Comparative reconstruction",
+      "short": "Air enters the beetle through small openings along its sides.",
+      "detail": "The openings connect the outside air with the tracheal system. Their rims are enlarged in this teaching model."
+    },
+    {
+      "id": "dorsal_vessel",
+      "name": "Heart tube",
+      "term": "Dorsal vessel",
+      "system": "circulatory",
+      "parent": null,
+      "source": "blood",
+      "evidence": "Comparative reconstruction",
+      "short": "A long tube near the back moves body fluid forward.",
+      "detail": "The abdominal heart and the forward aorta form the dorsal vessel. The fluid circulates through the open body cavity."
+    },
+    {
+      "id": "brain",
+      "name": "Brain",
+      "term": "Cerebral ganglia",
+      "system": "nervous",
+      "parent": null,
+      "source": "brain",
+      "evidence": "Comparative reconstruction",
+      "short": "Signals from the eyes and feelers arrive here.",
+      "detail": "The paired optic lobes connect the brain with the eyes. Nerve connections pass around the front of the gut."
+    },
+    {
+      "id": "nerve_cord",
+      "name": "Nerve cord",
+      "term": "Ventral nerve cord",
+      "system": "nervous",
+      "parent": null,
+      "source": "brain",
+      "evidence": "Comparative reconstruction",
+      "short": "This line of nerve centers runs along the belly side.",
+      "detail": "Groups of nerve cells called ganglia help coordinate movement. Their spacing and fusion vary among insects."
+    },
+    {
+      "id": "flight_muscles",
+      "name": "Flight muscles",
+      "term": "Thoracic flight musculature",
+      "system": "muscular",
+      "parent": null,
+      "source": "fold",
+      "evidence": "Comparative reconstruction",
+      "short": "Bundles inside the chest supply power for flight.",
+      "detail": "The bundles are shown as simplified groups so you can see how much of the thorax is devoted to movement."
+    },
+    {
+      "id": "ovary_l",
+      "name": "Left egg-making tubes",
+      "term": "Ovary and ovarioles",
+      "system": "reproductive",
+      "parent": null,
+      "source": "female",
+      "evidence": "Comparative reconstruction",
+      "short": "Eggs grow in little groups of tubes.",
+      "detail": "An adult female has paired ovaries. Developing eggs vary in size along the ovarioles. Their number varies with reproductive condition."
+    },
+    {
+      "id": "ovary_r",
+      "name": "Right egg-making tubes",
+      "term": "Ovary and ovarioles",
+      "system": "reproductive",
+      "parent": null,
+      "source": "female",
+      "evidence": "Comparative reconstruction",
+      "short": "Eggs grow in little groups of tubes.",
+      "detail": "An adult female has paired ovaries. Developing eggs vary in size along the ovarioles. Their number varies with reproductive condition."
+    },
+    {
+      "id": "oviduct",
+      "name": "Egg passage",
+      "term": "Oviducts",
+      "system": "reproductive",
+      "parent": null,
+      "source": "female",
+      "evidence": "Comparative reconstruction",
+      "short": "Eggs travel down these tubes on their way out.",
+      "detail": "The two lateral ducts join a common duct. Trace the branches back to the ovaries on either side."
+    },
+    {
+      "id": "fat_body",
+      "name": "Energy stores",
+      "term": "Fat body",
+      "system": "storage",
+      "parent": null,
+      "source": "bell",
+      "evidence": "Species reference",
+      "short": "These soft lobes store supplies the ladybug can use later.",
+      "detail": "Researchers found well-developed fat bodies in overwintering seven-spotted ladybirds. Their size changes with the animal’s condition."
+    }
+  ],
+  "view": {
+    "radius": 4,
+    "target": [
+      0,
+      0.5,
+      0
+    ],
+    "direction": [
+      -0.81,
+      0.93,
+      -1.2
+    ]
+  }
+}
