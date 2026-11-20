@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Owner review · Bugapedia</title>
+    <link rel="icon" href="/viewer/mark.svg" />
+    <link rel="stylesheet" href="/assets/guide.css" />
+    <script type="module" src="/assets/review.js"></script>
+  </head>
+  <body>
+    <header class="mast">
+      <div class="wrap mast-inner">
+        <a class="wordmark" href="/"
+          ><img src="/viewer/mark.svg" alt="" />Bugapedia</a
+        >
+        <nav>
+          <a href="/">← Library</a><button id="lock" hidden>Lock review</button>
+        </nav>
+      </div>
+    </header>
+    <main class="wrap review">
+      <h1>Photo requests<span>.</span></h1>
+      <form id="unlock" class="paper">
+        <label for="key">Owner access key</label
+        ><input
+          id="key"
+          type="password"
+          required
+          autocomplete="current-password"
+        /><button class="primary">Open review queue</button>
+      </form>
+      <p id="message" role="status"></p>
+      <section id="desk" hidden>
+        <p>
+          Review a photo, confirm the species, and download its approved build
+          request.
+        </p>
+        <button id="refresh">Refresh requests</button>
+        <div id="requests"></div>
+        <button id="more" hidden>Load more</button>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Suggest a bug · Bugapedia</title>
+    <link rel="icon" href="/viewer/mark.svg" />
+    <link rel="stylesheet" href="/assets/guide.css" />
+    <script type="module" src="/assets/request.js"></script>
+  </head>
+  <body>
+    <header class="mast">
+      <div class="wrap mast-inner">
+        <a href="/" class="wordmark"
+          ><img src="/viewer/mark.svg" alt="" />Bugapedia</a
+        >
+        <nav><a href="/">← Library</a></nav>
+      </div>
+    </header>
+    <main class="wrap form-page">
+      <section>
+        <h1>Suggest a bug<span>.</span></h1>
+        <p class="lead">
+          Found something interesting? Send the curator a photo and tell us what
+          you’d like to explore in 3D.
+        </p>
+        <p>
+          Your photo stays in the private review queue. When a new model is
+          ready, you’ll find it in the library.
+        </p>
+      </section>
+      <form id="request-form" class="paper">
+        <label for="photo">Bug photo</label>
+        <p class="help">
+          Choose a photo of the bug itself. Leave people, addresses, and other
+          personal details out of the frame.
+        </p>
+        <input
+          id="photo"
+          required
+          type="file"
+          accept="image/jpeg,image/png,image/webp"
+        />
+        <p class="help">JPEG, PNG, or WebP · up to 16 MB</p>
+        <img
+          id="preview"
+          class="preview"
+          alt="Your selected bug photo"
+          hidden
+        />
+        <label for="name"
+          >What do you think it is? <small>Optional</small></label
+        ><input
+          id="name"
+          maxlength="80"
+          placeholder="For example, a green lacewing"
+        />
+        <label for="note"
+          >What would you like to explore? <small>Optional</small></label
+        ><textarea
+          id="note"
+          rows="3"
+          maxlength="240"
+          placeholder="I’d love to see how its wings fold."
+        ></textarea>
+        <label class="check"
+          ><input id="permission" type="checkbox" required /> I took this photo
+          or have permission to submit it for private review.</label
+        >
+        <button id="submit" class="primary">
+          Send bug request <span aria-hidden="true">→</span>
+        </button>
+        <p id="message" role="status"></p>
+      </form>
+      <section id="receipt" class="paper" hidden tabindex="-1">
+        <h2>Request received.</h2>
+        <p>Your bug is in the curator’s review queue.</p>
+        <p id="reference"></p>
+        <a class="primary" href="/">Explore the library →</a>
+      </section>
+    </main>
+  </body>
+</html>

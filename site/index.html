@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#faf8ed" />
+    <meta
+      name="description"
+      content="Explore insects in 3D, look inside their anatomy, and suggest the next bug for the collection."
+    />
+    <title>Bugapedia · The 3D insect library</title>
+    <link rel="icon" href="/viewer/mark.svg" />
+    <link rel="stylesheet" href="/assets/guide.css" />
+    <script type="module" src="/assets/share.js"></script>
+  </head>
+  <body>
+    <header class="mast">
+      <div class="wrap mast-inner">
+        <a class="wordmark" href="/"
+          ><img src="/viewer/mark.svg" alt="" />Bugapedia</a
+        >
+        <nav aria-label="Main navigation">
+          <a href="#specimens">Specimens</a
+          ><a class="nav-action" href="/request/"
+            >Suggest a bug <span aria-hidden="true">↗</span></a
+          >
+        </nav>
+      </div>
+    </header>
+    <main class="wrap">
+      <section class="intro">
+        <div>
+          <h1>The 3D bug library<span>.</span></h1>
+          <p>
+            Lift a wing cover. Unfold a grasping leg. Choose a specimen and
+            explore the anatomy beneath its surface.
+          </p>
+        </div>
+        <button class="share" data-share>
+          Share library <span aria-hidden="true">↗</span>
+        </button>
+      </section>
+      <section
+        id="specimens"
+        class="specimen-grid"
+        aria-label="Choose a 3D specimen"
+      >
+        <!-- specimen cards -->
+      </section>
+      <section class="invite">
+        <div>
+          <h2>What bug did you find?</h2>
+          <p>Send a photo to suggest a new specimen for the collection.</p>
+        </div>
+        <a class="primary" href="/request/"
+          >Suggest a bug <span aria-hidden="true">→</span></a
+        >
+      </section>
+    </main>
+    <footer class="wrap foot">
+      <span>An open-source field guide by AnyBug</span
+      ><a href="https://github.com/BuildThingsThatBuildthings/anybug"
+        >Source &amp; credits</a
+      ><a href="/review/">Owner review</a>
+    </footer>
+  </body>
+</html>

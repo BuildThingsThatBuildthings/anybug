@@ -4,6 +4,12 @@ Explore a bug from the outside in. Choose a seven-spotted ladybug with 44 select
 
 ![AnyBug specimen viewer showing the seven-spotted ladybug](docs/ladybug.webp)
 
+## Bugapedia
+
+Bugapedia brings these specimens together in a shareable browser field guide. Visitors can open a specimen, take it apart and send the curator a photo to suggest another species. The curator privately reviews each observation, confirms an identification and exports an approved modeling brief. New species join the library after authoring and review.
+
+For the gallery, run `npm ci && npm run build:site` with Node 22.12 or newer, then `python3 -m http.server 4180 --bind 127.0.0.1 --directory dist` and open http://127.0.0.1:4180/. For the functional photo inbox, follow the [hosting and curator guide](docs/BUGAPEDIA.md).
+
 ## Open the viewer
 
 From the repository root, run:
@@ -46,7 +52,7 @@ Use `python3 rebuild.py european-mantis` for the mantis. For a new species, an a
 
 The pipeline writes the editable Blender master, animated GLB, and anatomy manifest, then verifies the GLB in a new Blender process before installing the outputs. Set `BLENDER` to an executable if it is outside your PATH. The shared viewer reads the species catalog. [Add a species](docs/ADDING-A-SPECIES.md) · [Verification](tests/README.md)
 
-Photo identification and matching a family observation to a supported specimen are planned for a later release.
+Species identification is curator-led. Visitors can include a tentative identification with their photo.
 
 ## License
 

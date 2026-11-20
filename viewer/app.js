@@ -445,7 +445,7 @@ el("species").onclick = () => {
   body.replaceChildren();
   for (const item of catalog) {
     const link = document.createElement("a");
-    link.href = "?specimen=" + encodeURIComponent(item.id);
+    link.href = location.pathname + "?specimen=" + encodeURIComponent(item.id);
     link.className = "part-link";
     link.textContent = item.name;
     if (item.id === specimen.id) link.setAttribute("aria-current", "page");

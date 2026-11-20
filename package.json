@@ -5,9 +5,16 @@
   "type": "module",
   "license": "MIT",
   "scripts": {
-    "test": "node tests/viewer.mjs"
+    "test": "node tests/viewer.mjs",
+    "build:site": "node scripts/build-site.mjs",
+    "test:requests": "node --test tests/requests.test.mjs",
+    "test:bugapedia": "node --env-file=.env tests/bugapedia.mjs"
   },
   "devDependencies": {
     "playwright": "1.61.1"
+  },
+  "dependencies": {
+    "@netlify/blobs": "11.1.9",
+    "jpeg-js": "0.4.4"
   }
 }
