@@ -55,6 +55,9 @@ controls = manifest["controls"]
 if not controls.keys() <= identifiers:
     raise ValueError("Each articulation must belong to a selectable part")
 verify_dependencies({pid: ctrl.get("requires") for pid, ctrl in controls.items()})
+for part in parts:
+    if "control" in part and part["control"] not in controls:
+        raise ValueError(f"Unknown articulation for {part['id']}")
 scene.frame_set(1)
 scene.world = bpy.data.worlds.new("Studio")
 # A useful starting view for anyone opening the editable master.
@@ -72,8 +75,12 @@ for screen in bpy.data.screens:
         if area.type == "VIEW_3D":
             space = area.spaces.active
             space.clip_start = 0.00005
-            space.region_3d.view_distance = 0.013
-            space.region_3d.view_location = (0, 0, 0.0006)
+            space.region_3d.view_distance = manifest["view"]["radius"] * 0.00325
+            space.region_3d.view_location = (
+                0,
+                0,
+                manifest["view"]["target"][1] * 0.001,
+            )
             space.region_3d.view_rotation = Vector((-0.55, -0.8, -0.95)).to_track_quat(
                 "-Z", "Y"
             )

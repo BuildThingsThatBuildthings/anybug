@@ -22,6 +22,17 @@ for p in brief["parts"]:
     obj = bpy.data.objects[p["id"]]
     assert obj.get("partId") == p["id"]
     assert any(o.type == "MESH" for o in obj.children_recursive), p["id"]
+# Every visible mesh belongs to exactly one labelled and selectable structure.
+for obj in bpy.context.scene.objects:
+    if obj.type == "MESH":
+        parents = []
+        current = obj
+        while current:
+            if current.get("partId"):
+                parents.append(current["partId"])
+            current = current.parent
+        assert len(parents) == 1, (obj.name, parents)
+
 animated = set()
 for clip in gltf.get("animations", []):
     for channel in clip["channels"]:
@@ -43,6 +54,38 @@ if brief["id"] == "seven-spot":
     ]
     length = (max(p.y for p in corners) - min(p.y for p in corners)) * 1000
     assert 7 < length < 9, length
+if brief["id"] == "european-mantis":
+    assert set(brief["controls"]) == {"tibia_l", "tibia_r"}
+
+    def center(pid):
+        points = [
+            obj.matrix_world @ Vector(corner)
+            for obj in bpy.data.objects[pid].children_recursive
+            if obj.type == "MESH"
+            for corner in obj.bound_box
+        ]
+        return sum(points, Vector()) / len(points)
+
+    for side in ("l", "r"):
+        for piece in (
+            "coxa",
+            "trochanter",
+            "femur",
+            "tibia",
+            "forefoot",
+            "tibial_spines",
+            "femoral_spines",
+            "flexor",
+        ):
+            part = next(p for p in brief["parts"] if p["id"] == f"{piece}_{side}")
+            assert part["control"] == f"tibia_{side}"
+        # Verify substantial travel in the imported geometry at the two keyed poses.
+        bpy.context.scene.frame_set(1)
+        folded = center(f"forefoot_{side}")
+        bpy.context.scene.frame_set(49)
+        assert (center(f"forefoot_{side}") - folded).length > 0.012
+    bpy.context.scene.frame_set(1)
+    assert 0.048 < (center("head") - center("cercus_l")).length < 0.066
 print(
     f"Verified {len(brief['parts'])} anatomical parts and {len(brief['controls'])} articulated controls."
 )

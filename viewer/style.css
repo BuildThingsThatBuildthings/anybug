@@ -113,6 +113,11 @@ main {
   font-weight: 700;
   padding: 10px 0;
 }
+.header-inner nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(12px, 3vw, 32px);
+}
 .guide-link {
   gap: 8px;
 }

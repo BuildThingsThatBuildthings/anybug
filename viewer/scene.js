@@ -44,6 +44,7 @@ export async function makeScene(host, url, manifest, events) {
   renderer.shadowMap.type = THREE.PCFSoftShadowMap;
   host.append(renderer.domElement);
   const world = new THREE.Scene();
+  const sceneScale = manifest.view.radius / 4;
   const pmrem = new THREE.PMREMGenerator(renderer);
   const studio = new RoomEnvironment();
   const illumination = pmrem.fromScene(studio, 0.035);
@@ -53,31 +54,38 @@ export async function makeScene(host, url, manifest, events) {
   studio.dispose();
   world.add(new THREE.HemisphereLight(0xfff8de, 0x827a62, 0.87));
   const light = new THREE.DirectionalLight(0xfff1d8, 1.85);
-  light.position.set(-5, 11, -5);
+  light.position.set(-5, 11, -5).multiplyScalar(sceneScale);
   light.castShadow = true;
   Object.assign(light.shadow.camera, {
-    left: -9,
-    right: 9,
-    top: 9,
-    bottom: -9,
+    left: -9 * sceneScale,
+    right: 9 * sceneScale,
+    top: 9 * sceneScale,
+    bottom: -9 * sceneScale,
     near: 0.1,
-    far: 30,
+    far: 30 * sceneScale,
   });
   light.shadow.mapSize.set(1024, 1024);
-  light.shadow.normalBias = 0.025;
+  light.shadow.normalBias = 0.025 * sceneScale;
   light.shadow.bias = -0.0004;
   light.shadow.radius = 3;
   world.add(light);
   const floor = new THREE.Mesh(
-    new THREE.PlaneGeometry(80, 80),
+    new THREE.PlaneGeometry(80 * sceneScale, 80 * sceneScale),
     new THREE.ShadowMaterial({ opacity: 0.16, depthWrite: false }),
   );
   floor.rotation.x = -Math.PI / 2;
-  floor.position.y = -0.55;
+  floor.position.y = manifest.view.floor ?? -0.55;
   floor.receiveShadow = true;
   world.add(floor);
 
-  const camera = new THREE.OrthographicCamera(-5, 5, 5, -5, 0.02, 150);
+  const camera = new THREE.OrthographicCamera(
+    -5,
+    5,
+    5,
+    -5,
+    0.02 * sceneScale,
+    150 * sceneScale,
+  );
   const controls = new OrbitControls(camera, renderer.domElement);
   controls.enablePan = false;
   controls.minZoom = 0.45;
@@ -186,7 +194,12 @@ export async function makeScene(host, url, manifest, events) {
     if (piece.p.parent) pieces.get(piece.p.parent).holder.attach(piece.holder);
     piece.rest = piece.holder.position.clone();
   }
-  const drawLabels = makeAnnotations(host, manifest.parts, events.select);
+  const drawLabels = makeAnnotations(
+    host,
+    manifest.parts,
+    events.select,
+    manifest.view.narrowLabelRails,
+  );
   const portrait = makePortraits(
     renderer,
     world,
@@ -211,8 +224,10 @@ export async function makeScene(host, url, manifest, events) {
         : 0;
     const half =
       manifest.view.radius *
-      Math.max(0.87, 1.05 / aspect) *
-      (1 + 0.37 * opening + 1.05 * spreadAmount);
+      Math.max(manifest.view.minFrame ?? 0.87, 1.05 / aspect) *
+      (1 +
+        (manifest.view.openingMargin ?? 0.37) * opening +
+        1.05 * spreadAmount);
     camera.top = half;
     camera.bottom = -half;
     camera.right = half * aspect;
@@ -268,7 +283,7 @@ export async function makeScene(host, url, manifest, events) {
         });
       }
       place(entry, state);
-      entry.goal = Number(state.open[p.id] || 0);
+      entry.goal = Number(state.open[p.control || p.id] || 0);
     }
     invalidate();
   }
@@ -351,7 +366,9 @@ export async function makeScene(host, url, manifest, events) {
       drawLabels(visible, current.selected, true);
     } else drawLabels([], null, false);
     const px = (host.clientWidth * camera.zoom) / (camera.right - camera.left);
-    const units = px > 95 ? 0.5 : px < 30 ? 2 : 1;
+    const units =
+      [0.1, 0.2, 0.5, 1, 2, 5, 10, 20, 50, 100].find((n) => n * px >= 30) ??
+      100;
     document.getElementById("scale-bar").style.width = units * px + "px";
     document.getElementById("scale-text").textContent = units + " mm";
     renderer.render(world, camera);
@@ -424,7 +441,9 @@ export async function makeScene(host, url, manifest, events) {
       .project(camera);
     const origin = target.clone().project(camera);
     const articulate =
-      entry.action &&
+      !current.spread &&
+      entry.p.system === "exterior" &&
+      manifest.controls[entry.p.control || id] &&
       !(current.moveTool && current.selected === id) &&
       !current.moved[id];
     gesture = {
@@ -437,7 +456,7 @@ export async function makeScene(host, url, manifest, events) {
       active: false,
       articulate,
       side: center.x >= origin.x ? 1 : -1,
-      base: Number(current.open[id] || 0),
+      base: Number(current.open[entry.p.control || id] || 0),
       offset: vector(current.moved[id]?.offset || [0, 0, 0]),
     };
     controls.enableRotate = false;

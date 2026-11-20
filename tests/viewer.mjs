@@ -4,6 +4,7 @@ import { mkdir } from "node:fs/promises";
 import { once } from "node:events";
 import { fileURLToPath } from "node:url";
 import { createHash } from "node:crypto";
+import { checkMantis } from "./mantis.mjs";
 const { chromium, webkit } = await import(
   process.env.PLAYWRIGHT_MODULE || "playwright"
 );
@@ -80,6 +81,38 @@ try {
       await frames();
       return digest(await geometryImage());
     };
+    async function assertReassembled(reference) {
+      const restored = await geometryImage();
+      const changed = await page.evaluate(
+        async ([first, last]) => {
+          async function pixels(data) {
+            const img = new Image();
+            img.src = "data:image/png;base64," + data;
+            await img.decode();
+            const c = document.createElement("canvas");
+            c.width = img.width;
+            c.height = img.height;
+            const ctx = c.getContext("2d");
+            ctx.drawImage(img, 0, 0);
+            return ctx.getImageData(0, 0, c.width, c.height).data;
+          }
+          const [a, b] = await Promise.all([pixels(first), pixels(last)]);
+          let count = 0;
+          for (let i = 0; i < a.length; i += 4)
+            if (
+              Math.max(...[0, 1, 2].map((j) => Math.abs(a[i + j] - b[i + j]))) >
+              8
+            )
+              count++;
+          return count / (a.length / 4);
+        },
+        [reference.toString("base64"), restored.toString("base64")],
+      );
+      assert.ok(
+        changed < 0.001,
+        "Reassembled pixels drifted by " + 100 * changed + "%",
+      );
+    }
     const findPart = async (query, id) => {
       await press("Browse parts");
       await page.getByRole("searchbox").fill(query);
@@ -149,35 +182,7 @@ try {
     assert.notDeepEqual(await pin(), before);
     await press("Reassemble");
     await frames();
-    const restored = await geometryImage();
-    const changed = await page.evaluate(
-      async ([first, last]) => {
-        async function pixels(data) {
-          const img = new Image();
-          img.src = "data:image/png;base64," + data;
-          await img.decode();
-          const c = document.createElement("canvas");
-          c.width = img.width;
-          c.height = img.height;
-          const ctx = c.getContext("2d");
-          ctx.drawImage(img, 0, 0);
-          return ctx.getImageData(0, 0, c.width, c.height).data;
-        }
-        const [a, b] = await Promise.all([pixels(first), pixels(last)]);
-        let count = 0;
-        for (let i = 0; i < a.length; i += 4)
-          if (
-            Math.max(...[0, 1, 2].map((j) => Math.abs(a[i + j] - b[i + j]))) > 8
-          )
-            count++;
-        return count / (a.length / 4);
-      },
-      [reference.toString("base64"), restored.toString("base64")],
-    );
-    assert.ok(
-      changed < 0.001,
-      "Reassembled pixels drifted by " + 100 * changed + "%",
-    );
+    await assertReassembled(reference);
     const dragFrom = async (point, dx, dy) => {
       await canvas.scrollIntoViewIfNeeded();
       const p = await point.boundingBox();
@@ -383,6 +388,18 @@ try {
     await press("Field guide");
     assert.ok(await page.getByRole("dialog").isVisible());
     await press("Close dialog");
+    await checkMantis({
+      page,
+      press,
+      dragFrom,
+      findPart,
+      capture,
+      pin,
+      frames,
+      shot,
+      geometryImage,
+      assertReassembled,
+    });
     assert.deepEqual(errors, []);
     assert.deepEqual(remote, []);
     for (const path of [
@@ -396,7 +413,7 @@ try {
       engine +
         " " +
         name +
-        ": passed dissection, palette, drag, undo, reset and local-only loading.",
+        ": passed ladybug and mantis dissection, independent leg motion, labels, palettes, reset and local-only loading.",
     );
     await page.close();
   }

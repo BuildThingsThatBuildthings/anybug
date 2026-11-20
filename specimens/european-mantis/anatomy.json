@@ -1,0 +1,1086 @@
+{
+  "id": "european-mantis",
+  "name": "European praying mantis",
+  "scientific": "Mantis religiosa",
+  "stage": "Adult female",
+  "lengthMm": 55,
+  "model": "specimen.glb",
+  "focus": "tibia_l",
+  "title": "A leg that folds like a pocketknife",
+  "overview": "Open a grasping leg slowly. Watch the two rows of spines separate as the shin swings away from the thigh.",
+  "dragHint": "Drag a front leg up to open it",
+  "gestureGuide": "Drag either front leg up or outward to open it, then reverse your drag to fold it. Each leg holds its own position.",
+  "landmarks": [
+    "tibia_l",
+    "tibia_r",
+    "head",
+    "forewing_l"
+  ],
+  "spread": {
+    "head": [
+      0,
+      8,
+      -8
+    ],
+    "ocelli": [
+      0,
+      5,
+      -3
+    ],
+    "pronotum": [
+      0,
+      12,
+      -2
+    ],
+    "chest": [
+      0,
+      13,
+      4
+    ],
+    "back": [
+      0,
+      17,
+      5
+    ],
+    "belly": [
+      0,
+      -14,
+      4
+    ],
+    "brain": [
+      0,
+      4,
+      -6
+    ],
+    "cord": [
+      0,
+      -8,
+      0
+    ],
+    "oesophagus": [
+      -7,
+      1,
+      -3
+    ],
+    "crop": [
+      -8,
+      3,
+      2
+    ],
+    "valve": [
+      -4,
+      2,
+      4
+    ],
+    "midgut": [
+      -8,
+      2,
+      10
+    ],
+    "caeca": [
+      -16,
+      1,
+      8
+    ],
+    "hindgut": [
+      -7,
+      -2,
+      13
+    ],
+    "tubules": [
+      -16,
+      -5,
+      13
+    ],
+    "heart": [
+      0,
+      8,
+      4
+    ],
+    "oviduct": [
+      0,
+      -6,
+      12
+    ],
+    "eye_l": [
+      -5,
+      3,
+      -2
+    ],
+    "antenna_l": [
+      -5,
+      6,
+      -2
+    ],
+    "jaw_l": [
+      -3,
+      -3,
+      -4
+    ],
+    "palp_l": [
+      -6,
+      -2,
+      -5
+    ],
+    "coxa_l": [
+      -8,
+      0,
+      -4
+    ],
+    "trochanter_l": [
+      -3,
+      -2,
+      0
+    ],
+    "femur_l": [
+      -4,
+      2,
+      -2
+    ],
+    "tibia_l": [
+      -3,
+      5,
+      -2
+    ],
+    "femoral_spines_l": [
+      -2,
+      -4,
+      0
+    ],
+    "tibial_spines_l": [
+      -2,
+      4,
+      0
+    ],
+    "forefoot_l": [
+      -2,
+      -4,
+      0
+    ],
+    "flexor_l": [
+      -2,
+      -3,
+      4
+    ],
+    "forewing_l": [
+      -13,
+      13,
+      8
+    ],
+    "hindwing_l": [
+      -15,
+      6,
+      12
+    ],
+    "middle_l": [
+      -10,
+      -3,
+      -3
+    ],
+    "hind_l": [
+      -11,
+      -3,
+      5
+    ],
+    "cercus_l": [
+      -5,
+      2,
+      12
+    ],
+    "trachea_l": [
+      -12,
+      3,
+      0
+    ],
+    "ovary_l": [
+      -10,
+      -2,
+      9
+    ],
+    "foot_middle_l": [
+      -4,
+      -3,
+      0
+    ],
+    "foot_hind_l": [
+      -4,
+      -3,
+      0
+    ],
+    "eye_r": [
+      5,
+      3,
+      -2
+    ],
+    "antenna_r": [
+      5,
+      6,
+      -2
+    ],
+    "jaw_r": [
+      3,
+      -3,
+      -4
+    ],
+    "palp_r": [
+      6,
+      -2,
+      -5
+    ],
+    "coxa_r": [
+      8,
+      0,
+      -4
+    ],
+    "trochanter_r": [
+      3,
+      -2,
+      0
+    ],
+    "femur_r": [
+      4,
+      2,
+      -2
+    ],
+    "tibia_r": [
+      3,
+      5,
+      -2
+    ],
+    "femoral_spines_r": [
+      2,
+      -4,
+      0
+    ],
+    "tibial_spines_r": [
+      2,
+      4,
+      0
+    ],
+    "forefoot_r": [
+      2,
+      -4,
+      0
+    ],
+    "flexor_r": [
+      2,
+      -3,
+      4
+    ],
+    "forewing_r": [
+      13,
+      13,
+      8
+    ],
+    "hindwing_r": [
+      15,
+      6,
+      12
+    ],
+    "middle_r": [
+      10,
+      -3,
+      -3
+    ],
+    "hind_r": [
+      11,
+      -3,
+      5
+    ],
+    "cercus_r": [
+      5,
+      2,
+      12
+    ],
+    "trachea_r": [
+      12,
+      3,
+      0
+    ],
+    "ovary_r": [
+      10,
+      -2,
+      9
+    ],
+    "foot_middle_r": [
+      4,
+      -3,
+      0
+    ],
+    "foot_hind_r": [
+      4,
+      -3,
+      0
+    ]
+  },
+  "controls": {
+    "tibia_l": {
+      "open": "Open left front leg",
+      "close": "Fold left front leg"
+    },
+    "tibia_r": {
+      "open": "Open right front leg",
+      "close": "Fold right front leg"
+    }
+  },
+  "systems": {
+    "exterior": {
+      "name": "Exterior",
+      "color": "#698843"
+    },
+    "digestive": {
+      "name": "Digestion",
+      "color": "#d18a39"
+    },
+    "respiratory": {
+      "name": "Breathing",
+      "color": "#388d86"
+    },
+    "nervous": {
+      "name": "Senses & nerves",
+      "color": "#9466b4"
+    },
+    "circulatory": {
+      "name": "Circulation",
+      "color": "#cf575a"
+    },
+    "muscular": {
+      "name": "Movement",
+      "color": "#b76869"
+    },
+    "reproductive": {
+      "name": "Reproduction",
+      "color": "#ba7642"
+    },
+    "excretory": {
+      "name": "Waste removal",
+      "color": "#bd9b29"
+    }
+  },
+  "parts": [
+    {
+      "id": "head",
+      "name": "Head capsule",
+      "term": "Cranium",
+      "system": "exterior",
+      "parent": null,
+      "source": "museum",
+      "evidence": "Species reference",
+      "short": "Look at the triangle between the two big eyes.",
+      "detail": "The broad upper head narrows toward the chewing mouth. Pull away the capsule to find the brain behind the eyes."
+    },
+    {
+      "id": "pronotum",
+      "name": "Long neck shield",
+      "term": "Pronotum",
+      "system": "exterior",
+      "parent": null,
+      "source": "museum",
+      "evidence": "Species reference",
+      "short": "The long green shield behind the head is part of the chest.",
+      "detail": "It covers the first thoracic segment, which carries the grasping legs. The shield widens near their attachment."
+    },
+    {
+      "id": "chest",
+      "name": "Wing-bearing chest",
+      "term": "Pterothorax",
+      "system": "exterior",
+      "parent": null,
+      "source": "morph",
+      "evidence": "Comparative reconstruction",
+      "short": "The wings and four walking legs meet here.",
+      "detail": "The middle and rear thoracic segments carry the two pairs of wings. They are shown as one selectable unit."
+    },
+    {
+      "id": "ocelli",
+      "name": "Simple eyes",
+      "term": "Ocelli",
+      "system": "exterior",
+      "parent": "head",
+      "source": "morph",
+      "evidence": "Comparative reconstruction",
+      "short": "Find three tiny eyes between the two large ones.",
+      "detail": "These simple light sensors form a triangle on the face, distinct from the faceted compound eyes."
+    },
+    {
+      "id": "eye_l",
+      "name": "Left compound eye",
+      "term": "Compound eye",
+      "system": "exterior",
+      "parent": "head",
+      "source": "museum",
+      "evidence": "Species reference",
+      "short": "Many tiny windows look out from one big eye.",
+      "detail": "Each facet admits light in a particular direction. The dark patch represents a pseudopupil in this fixed view."
+    },
+    {
+      "id": "antenna_l",
+      "name": "Left feeler",
+      "term": "Antenna",
+      "system": "exterior",
+      "parent": "head",
+      "source": "museum",
+      "evidence": "Species reference",
+      "short": "A long thread on the head helps sense the surroundings.",
+      "detail": "The thick basal segments support a slender flagellum. Its many small articles are simplified here."
+    },
+    {
+      "id": "jaw_l",
+      "name": "Left chewing jaw",
+      "term": "Mandible",
+      "system": "exterior",
+      "parent": "head",
+      "source": "morph",
+      "evidence": "Comparative reconstruction",
+      "short": "Two jaws meet sideways to cut a bite.",
+      "detail": "The paired mandibles sit below the face. Their hardened edges work against each other."
+    },
+    {
+      "id": "palp_l",
+      "name": "Left mouth feeler",
+      "term": "Maxillary palp",
+      "system": "exterior",
+      "parent": "head",
+      "source": "morph",
+      "evidence": "Comparative reconstruction",
+      "short": "This little finger feels food near the mouth.",
+      "detail": "The segmented palp belongs to a maxilla. Its tip samples material beside the mandibles."
+    },
+    {
+      "id": "eye_r",
+      "name": "Right compound eye",
+      "term": "Compound eye",
+      "system": "exterior",
+      "parent": "head",
+      "source": "museum",
+      "evidence": "Species reference",
+      "short": "Many tiny windows look out from one big eye.",
+      "detail": "Each facet admits light in a particular direction. The dark patch represents a pseudopupil in this fixed view."
+    },
+    {
+      "id": "antenna_r",
+      "name": "Right feeler",
+      "term": "Antenna",
+      "system": "exterior",
+      "parent": "head",
+      "source": "museum",
+      "evidence": "Species reference",
+      "short": "A long thread on the head helps sense the surroundings.",
+      "detail": "The thick basal segments support a slender flagellum. Its many small articles are simplified here."
+    },
+    {
+      "id": "jaw_r",
+      "name": "Right chewing jaw",
+      "term": "Mandible",
+      "system": "exterior",
+      "parent": "head",
+      "source": "morph",
+      "evidence": "Comparative reconstruction",
+      "short": "Two jaws meet sideways to cut a bite.",
+      "detail": "The paired mandibles sit below the face. Their hardened edges work against each other."
+    },
+    {
+      "id": "palp_r",
+      "name": "Right mouth feeler",
+      "term": "Maxillary palp",
+      "system": "exterior",
+      "parent": "head",
+      "source": "morph",
+      "evidence": "Comparative reconstruction",
+      "short": "This little finger feels food near the mouth.",
+      "detail": "The segmented palp belongs to a maxilla. Its tip samples material beside the mandibles."
+    },
+    {
+      "id": "back",
+      "name": "Abdominal back plates",
+      "term": "Tergites",
+      "system": "exterior",
+      "parent": null,
+      "source": "morph",
+      "evidence": "Comparative reconstruction",
+      "short": "These overlapping plates cover the back under the wings.",
+      "detail": "A series of thin arches forms the dorsal abdominal wall. The plate series lifts away together."
+    },
+    {
+      "id": "belly",
+      "name": "Abdominal belly plates",
+      "term": "Sternites",
+      "system": "exterior",
+      "parent": null,
+      "source": "morph",
+      "evidence": "Comparative reconstruction",
+      "short": "Look under the abdomen for the belly plates.",
+      "detail": "The ventral plates enclose the softer organs. Their pale overlapping edges mark the segment boundaries."
+    },
+    {
+      "id": "coxa_l",
+      "name": "Left front leg base",
+      "term": "Forecoxa",
+      "system": "exterior",
+      "parent": null,
+      "source": "mark",
+      "evidence": "Species reference",
+      "short": "Follow this long link from the chest to the grasping leg.",
+      "detail": "Its inner face bears the European mantis’s dark marking. This individual is represented with a pale center.",
+      "control": "tibia_l"
+    },
+    {
+      "id": "trochanter_l",
+      "name": "Left front leg connector",
+      "term": "Foretrochanter",
+      "system": "exterior",
+      "parent": "coxa_l",
+      "source": "leg",
+      "evidence": "Species reference",
+      "short": "This short link connects the long leg base and thigh.",
+      "detail": "The trochanter sits between coxa and femur. Use it to trace the joint chain even when the leg is folded.",
+      "control": "tibia_l"
+    },
+    {
+      "id": "femur_l",
+      "name": "Left grasping thigh",
+      "term": "Forefemur",
+      "system": "exterior",
+      "parent": "trochanter_l",
+      "source": "leg",
+      "evidence": "Species reference",
+      "short": "One side of the spiny trap is a thick thigh.",
+      "detail": "The thick femur carries muscles and rows of spines. Notice how the tibia closes against the underside.",
+      "control": "tibia_l"
+    },
+    {
+      "id": "tibia_l",
+      "name": "Left grasping shin",
+      "term": "Foretibia",
+      "system": "exterior",
+      "parent": "femur_l",
+      "source": "leg",
+      "evidence": "Species reference",
+      "short": "Drag this folded shin upward to open the front leg.",
+      "detail": "The shin pivots at the end of the femur. Its recurved tip and opposing spines narrow the space between the two segments as it closes.",
+      "control": "tibia_l"
+    },
+    {
+      "id": "femoral_spines_l",
+      "name": "Left thigh spines",
+      "term": "Forefemoral spine rows",
+      "system": "exterior",
+      "parent": "femur_l",
+      "source": "morph",
+      "evidence": "Comparative reconstruction",
+      "short": "These pointed teeth line the grasping thigh.",
+      "detail": "The spine rows are selectable as a set. Their spacing and count illustrate how the two grasping surfaces fit together.",
+      "control": "tibia_l"
+    },
+    {
+      "id": "tibial_spines_l",
+      "name": "Left shin spines",
+      "term": "Foretibial spine rows and spur",
+      "system": "exterior",
+      "parent": "tibia_l",
+      "source": "morph",
+      "evidence": "Comparative reconstruction",
+      "short": "These small points turn toward the thigh when the leg folds.",
+      "detail": "The marginal spines and larger terminal spur travel with the tibia. The tips are enlarged for exploration.",
+      "control": "tibia_l"
+    },
+    {
+      "id": "forefoot_l",
+      "name": "Left front foot",
+      "term": "Foretarsus",
+      "system": "exterior",
+      "parent": "tibia_l",
+      "source": "leg",
+      "evidence": "Species reference",
+      "short": "The delicate foot extends beyond the spiny shin.",
+      "detail": "Tarsomeres form the foot beyond the tibia, with a pair of fine terminal claws. It follows the shin as you open the leg.",
+      "control": "tibia_l"
+    },
+    {
+      "id": "flexor_l",
+      "name": "Left shin-closing muscle",
+      "term": "Foretibial flexor",
+      "system": "muscular",
+      "parent": "femur_l",
+      "source": "leg",
+      "evidence": "Species reference",
+      "short": "This bundle pulls the grasping shin closed.",
+      "detail": "It occupies the thick forefemur. The white terminal thread represents its attachment tendon; the fibers are schematic.",
+      "control": "tibia_l"
+    },
+    {
+      "id": "middle_l",
+      "name": "Left middle walking leg",
+      "term": "Cursorial leg",
+      "system": "exterior",
+      "parent": null,
+      "source": "leg",
+      "evidence": "Species reference",
+      "short": "These long legs support the mantis while its front legs are free.",
+      "detail": "Trace the bend between femur and tibia. Each walking leg has its own detachable foot."
+    },
+    {
+      "id": "foot_middle_l",
+      "name": "Left middle walking foot",
+      "term": "Tarsus and pretarsus",
+      "system": "exterior",
+      "parent": "middle_l",
+      "source": "leg",
+      "evidence": "Species reference",
+      "short": "The foot ends in tiny gripping claws.",
+      "detail": "A chain of tarsal segments and the claws at the tip make contact with the ground."
+    },
+    {
+      "id": "hind_l",
+      "name": "Left hind walking leg",
+      "term": "Cursorial leg",
+      "system": "exterior",
+      "parent": null,
+      "source": "leg",
+      "evidence": "Species reference",
+      "short": "These long legs support the mantis while its front legs are free.",
+      "detail": "Trace the bend between femur and tibia. Each walking leg has its own detachable foot."
+    },
+    {
+      "id": "foot_hind_l",
+      "name": "Left hind walking foot",
+      "term": "Tarsus and pretarsus",
+      "system": "exterior",
+      "parent": "hind_l",
+      "source": "leg",
+      "evidence": "Species reference",
+      "short": "The foot ends in tiny gripping claws.",
+      "detail": "A chain of tarsal segments and the claws at the tip make contact with the ground."
+    },
+    {
+      "id": "forewing_l",
+      "name": "Left leathery forewing",
+      "term": "Tegmen",
+      "system": "exterior",
+      "parent": null,
+      "source": "wing",
+      "evidence": "Species reference",
+      "short": "This narrow green wing lies over the folded flight wing.",
+      "detail": "Longitudinal veins support the green blade. Its smaller crossveins and pale stigma are schematic."
+    },
+    {
+      "id": "hindwing_l",
+      "name": "Left folded hindwing",
+      "term": "Ala",
+      "system": "exterior",
+      "parent": null,
+      "source": "wing",
+      "evidence": "Species reference",
+      "short": "A thin fan of wing folds under the green cover.",
+      "detail": "The pleated membrane can spread during flight. This dissection shows the resting folds."
+    },
+    {
+      "id": "cercus_l",
+      "name": "Left tail feeler",
+      "term": "Cercus",
+      "system": "exterior",
+      "parent": null,
+      "source": "morph",
+      "evidence": "Comparative reconstruction",
+      "short": "Feelers at the rear sense movement nearby.",
+      "detail": "The paired cerci project from the abdominal tip and bear sensory hairs."
+    },
+    {
+      "id": "coxa_r",
+      "name": "Right front leg base",
+      "term": "Forecoxa",
+      "system": "exterior",
+      "parent": null,
+      "source": "mark",
+      "evidence": "Species reference",
+      "short": "Follow this long link from the chest to the grasping leg.",
+      "detail": "Its inner face bears the European mantis’s dark marking. This individual is represented with a pale center.",
+      "control": "tibia_r"
+    },
+    {
+      "id": "trochanter_r",
+      "name": "Right front leg connector",
+      "term": "Foretrochanter",
+      "system": "exterior",
+      "parent": "coxa_r",
+      "source": "leg",
+      "evidence": "Species reference",
+      "short": "This short link connects the long leg base and thigh.",
+      "detail": "The trochanter sits between coxa and femur. Use it to trace the joint chain even when the leg is folded.",
+      "control": "tibia_r"
+    },
+    {
+      "id": "femur_r",
+      "name": "Right grasping thigh",
+      "term": "Forefemur",
+      "system": "exterior",
+      "parent": "trochanter_r",
+      "source": "leg",
+      "evidence": "Species reference",
+      "short": "One side of the spiny trap is a thick thigh.",
+      "detail": "The thick femur carries muscles and rows of spines. Notice how the tibia closes against the underside.",
+      "control": "tibia_r"
+    },
+    {
+      "id": "tibia_r",
+      "name": "Right grasping shin",
+      "term": "Foretibia",
+      "system": "exterior",
+      "parent": "femur_r",
+      "source": "leg",
+      "evidence": "Species reference",
+      "short": "Drag this folded shin upward to open the front leg.",
+      "detail": "The shin pivots at the end of the femur. Its recurved tip and opposing spines narrow the space between the two segments as it closes.",
+      "control": "tibia_r"
+    },
+    {
+      "id": "femoral_spines_r",
+      "name": "Right thigh spines",
+      "term": "Forefemoral spine rows",
+      "system": "exterior",
+      "parent": "femur_r",
+      "source": "morph",
+      "evidence": "Comparative reconstruction",
+      "short": "These pointed teeth line the grasping thigh.",
+      "detail": "The spine rows are selectable as a set. Their spacing and count illustrate how the two grasping surfaces fit together.",
+      "control": "tibia_r"
+    },
+    {
+      "id": "tibial_spines_r",
+      "name": "Right shin spines",
+      "term": "Foretibial spine rows and spur",
+      "system": "exterior",
+      "parent": "tibia_r",
+      "source": "morph",
+      "evidence": "Comparative reconstruction",
+      "short": "These small points turn toward the thigh when the leg folds.",
+      "detail": "The marginal spines and larger terminal spur travel with the tibia. The tips are enlarged for exploration.",
+      "control": "tibia_r"
+    },
+    {
+      "id": "forefoot_r",
+      "name": "Right front foot",
+      "term": "Foretarsus",
+      "system": "exterior",
+      "parent": "tibia_r",
+      "source": "leg",
+      "evidence": "Species reference",
+      "short": "The delicate foot extends beyond the spiny shin.",
+      "detail": "Tarsomeres form the foot beyond the tibia, with a pair of fine terminal claws. It follows the shin as you open the leg.",
+      "control": "tibia_r"
+    },
+    {
+      "id": "flexor_r",
+      "name": "Right shin-closing muscle",
+      "term": "Foretibial flexor",
+      "system": "muscular",
+      "parent": "femur_r",
+      "source": "leg",
+      "evidence": "Species reference",
+      "short": "This bundle pulls the grasping shin closed.",
+      "detail": "It occupies the thick forefemur. The white terminal thread represents its attachment tendon; the fibers are schematic.",
+      "control": "tibia_r"
+    },
+    {
+      "id": "middle_r",
+      "name": "Right middle walking leg",
+      "term": "Cursorial leg",
+      "system": "exterior",
+      "parent": null,
+      "source": "leg",
+      "evidence": "Species reference",
+      "short": "These long legs support the mantis while its front legs are free.",
+      "detail": "Trace the bend between femur and tibia. Each walking leg has its own detachable foot."
+    },
+    {
+      "id": "foot_middle_r",
+      "name": "Right middle walking foot",
+      "term": "Tarsus and pretarsus",
+      "system": "exterior",
+      "parent": "middle_r",
+      "source": "leg",
+      "evidence": "Species reference",
+      "short": "The foot ends in tiny gripping claws.",
+      "detail": "A chain of tarsal segments and the claws at the tip make contact with the ground."
+    },
+    {
+      "id": "hind_r",
+      "name": "Right hind walking leg",
+      "term": "Cursorial leg",
+      "system": "exterior",
+      "parent": null,
+      "source": "leg",
+      "evidence": "Species reference",
+      "short": "These long legs support the mantis while its front legs are free.",
+      "detail": "Trace the bend between femur and tibia. Each walking leg has its own detachable foot."
+    },
+    {
+      "id": "foot_hind_r",
+      "name": "Right hind walking foot",
+      "term": "Tarsus and pretarsus",
+      "system": "exterior",
+      "parent": "hind_r",
+      "source": "leg",
+      "evidence": "Species reference",
+      "short": "The foot ends in tiny gripping claws.",
+      "detail": "A chain of tarsal segments and the claws at the tip make contact with the ground."
+    },
+    {
+      "id": "forewing_r",
+      "name": "Right leathery forewing",
+      "term": "Tegmen",
+      "system": "exterior",
+      "parent": null,
+      "source": "wing",
+      "evidence": "Species reference",
+      "short": "This narrow green wing lies over the folded flight wing.",
+      "detail": "Longitudinal veins support the green blade. Its smaller crossveins and pale stigma are schematic."
+    },
+    {
+      "id": "hindwing_r",
+      "name": "Right folded hindwing",
+      "term": "Ala",
+      "system": "exterior",
+      "parent": null,
+      "source": "wing",
+      "evidence": "Species reference",
+      "short": "A thin fan of wing folds under the green cover.",
+      "detail": "The pleated membrane can spread during flight. This dissection shows the resting folds."
+    },
+    {
+      "id": "cercus_r",
+      "name": "Right tail feeler",
+      "term": "Cercus",
+      "system": "exterior",
+      "parent": null,
+      "source": "morph",
+      "evidence": "Comparative reconstruction",
+      "short": "Feelers at the rear sense movement nearby.",
+      "detail": "The paired cerci project from the abdominal tip and bear sensory hairs."
+    },
+    {
+      "id": "brain",
+      "name": "Brain",
+      "term": "Supraoesophageal ganglion",
+      "system": "nervous",
+      "parent": null,
+      "source": "nerve",
+      "evidence": "Comparative reconstruction",
+      "short": "The brain sits between the two large eyes.",
+      "detail": "The paired optic lobes flank the central brain. Position and tissue colors here are an educational reconstruction."
+    },
+    {
+      "id": "cord",
+      "name": "Belly nerve cord",
+      "term": "Ventral nerve cord",
+      "system": "nervous",
+      "parent": null,
+      "source": "nerve",
+      "evidence": "Comparative reconstruction",
+      "short": "Follow the nerve cord along the underside of the body.",
+      "detail": "Ganglia along the cord coordinate local movements. The swellings mark a simplified series of nerve centers."
+    },
+    {
+      "id": "oesophagus",
+      "name": "Food tube",
+      "term": "Oesophagus",
+      "system": "digestive",
+      "parent": null,
+      "source": "gut",
+      "evidence": "Comparative reconstruction",
+      "short": "Food travels down this narrow tube from the mouth.",
+      "detail": "The oesophagus passes through the long prothorax on its way to the crop."
+    },
+    {
+      "id": "crop",
+      "name": "Food store",
+      "term": "Crop",
+      "system": "digestive",
+      "parent": null,
+      "source": "gut",
+      "evidence": "Comparative reconstruction",
+      "short": "A stretchy pouch holds a meal.",
+      "detail": "The crop can expand after feeding. This model uses a moderately filled pouch informed by dissections of a related mantis."
+    },
+    {
+      "id": "valve",
+      "name": "Crop outlet",
+      "term": "Proventriculus",
+      "system": "digestive",
+      "parent": null,
+      "source": "gut",
+      "evidence": "Comparative reconstruction",
+      "short": "This little chamber leads from the crop into the midgut.",
+      "detail": "A muscular region regulates passage into the digestive midgut."
+    },
+    {
+      "id": "midgut",
+      "name": "Digestive tube",
+      "term": "Midgut",
+      "system": "digestive",
+      "parent": null,
+      "source": "gut",
+      "evidence": "Comparative reconstruction",
+      "short": "The mantis digests and absorbs its meal here.",
+      "detail": "The midgut lies after the foregut valve and before the narrower hindgut."
+    },
+    {
+      "id": "caeca",
+      "name": "Digestive pouches",
+      "term": "Gastric caeca",
+      "system": "digestive",
+      "parent": null,
+      "source": "gut",
+      "evidence": "Comparative reconstruction",
+      "short": "Small pouches reach along the sides of the gut.",
+      "detail": "These blind-ended tubes connect near the anterior midgut. The illustrated arrangement follows a related mantis."
+    },
+    {
+      "id": "hindgut",
+      "name": "Rear gut",
+      "term": "Hindgut",
+      "system": "digestive",
+      "parent": null,
+      "source": "gut",
+      "evidence": "Comparative reconstruction",
+      "short": "The last part of the gut leads to the rear opening.",
+      "detail": "The curved hindgut connects the midgut to the rectum. Its bends are simplified."
+    },
+    {
+      "id": "tubules",
+      "name": "Waste tubes",
+      "term": "Malpighian tubules",
+      "system": "excretory",
+      "parent": null,
+      "source": "gut",
+      "evidence": "Comparative reconstruction",
+      "short": "Fine threads help remove waste from the body fluid.",
+      "detail": "The blind tubules join the gut near the midgut–hindgut boundary. Only a representative bundle is shown."
+    },
+    {
+      "id": "heart",
+      "name": "Heart tube",
+      "term": "Dorsal vessel",
+      "system": "circulatory",
+      "parent": null,
+      "source": "blood",
+      "evidence": "Comparative reconstruction",
+      "short": "A long tube under the back moves body fluid forward.",
+      "detail": "The abdominal heart continues into an anterior aorta. Breathing tubes deliver oxygen separately."
+    },
+    {
+      "id": "oviduct",
+      "name": "Egg duct",
+      "term": "Paired and common oviducts",
+      "system": "reproductive",
+      "parent": null,
+      "source": "repro",
+      "evidence": "Comparative reconstruction",
+      "short": "These two paths meet and carry eggs toward the rear.",
+      "detail": "The lateral ducts converge into a common outlet. The reproductive tract is a comparative reconstruction."
+    },
+    {
+      "id": "trachea_l",
+      "name": "Left breathing tubes",
+      "term": "Tracheal trunk and branches",
+      "system": "respiratory",
+      "parent": null,
+      "source": "air",
+      "evidence": "Comparative reconstruction",
+      "short": "Air reaches the tissues through branching tubes.",
+      "detail": "The lateral trunks connect a network of airways. Branch thickness is exaggerated so the paths can be followed."
+    },
+    {
+      "id": "ovary_l",
+      "name": "Left egg tubes",
+      "term": "Ovary with ovarioles",
+      "system": "reproductive",
+      "parent": null,
+      "source": "repro",
+      "evidence": "Comparative reconstruction",
+      "short": "Eggs develop in tubes on each side of the abdomen.",
+      "detail": "Each ovary is shown as a bundle of ovarioles at an illustrative stage of egg development."
+    },
+    {
+      "id": "trachea_r",
+      "name": "Right breathing tubes",
+      "term": "Tracheal trunk and branches",
+      "system": "respiratory",
+      "parent": null,
+      "source": "air",
+      "evidence": "Comparative reconstruction",
+      "short": "Air reaches the tissues through branching tubes.",
+      "detail": "The lateral trunks connect a network of airways. Branch thickness is exaggerated so the paths can be followed."
+    },
+    {
+      "id": "ovary_r",
+      "name": "Right egg tubes",
+      "term": "Ovary with ovarioles",
+      "system": "reproductive",
+      "parent": null,
+      "source": "repro",
+      "evidence": "Comparative reconstruction",
+      "short": "Eggs develop in tubes on each side of the abdomen.",
+      "detail": "Each ovary is shown as a bundle of ovarioles at an illustrative stage of egg development."
+    }
+  ],
+  "sources": {
+    "museum": [
+      "Royal BC Museum · European praying mantis",
+      "https://learning.royalbcmuseum.bc.ca/wp-content/uploads/2017/10/Praying-Mantis.pdf"
+    ],
+    "leg": [
+      "Comparative leg musculature · Adult female Mantis religiosa",
+      "https://doi.org/10.1002/jmor.70013"
+    ],
+    "morph": [
+      "Brannoch and colleagues · Illustrated manual of mantis morphology",
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC5673847/"
+    ],
+    "wing": [
+      "Brannoch and colleagues · European mantis wing venation",
+      "https://pubmed.ncbi.nlm.nih.gov/29200926/"
+    ],
+    "mark": [
+      "University of Nebraska–Lincoln · European mantid identification",
+      "https://entomology.unl.edu/scilit/Maggie%20Heumann%20European%20Mantid.pdf"
+    ],
+    "gut": [
+      "Woodring et al. · Digestive tract of a related mantis, figure 1",
+      "https://doi.org/10.1111/phen.12319"
+    ],
+    "nerve": [
+      "NC State University · Insect nervous system",
+      "https://genent.cals.ncsu.edu/bug-bytes/nervous-system/"
+    ],
+    "air": [
+      "NC State University · Insect respiratory system",
+      "https://genent.cals.ncsu.edu/bug-bytes/respiratory-system/"
+    ],
+    "blood": [
+      "NC State University · Insect circulation",
+      "https://genent.cals.ncsu.edu/bug-bytes/circulatory-system/"
+    ],
+    "repro": [
+      "NC State University · Female insect reproductive system",
+      "https://genent.cals.ncsu.edu/bug-bytes/reproductive-system/females/"
+    ]
+  },
+  "view": {
+    "radius": 33,
+    "target": [
+      0,
+      11,
+      -2
+    ],
+    "direction": [
+      -1.05,
+      0.65,
+      -0.77
+    ],
+    "floor": -0.07,
+    "openingMargin": 0.14,
+    "minFrame": 0.75,
+    "narrowLabelRails": true
+  }
+}

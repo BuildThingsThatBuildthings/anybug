@@ -1,5 +1,10 @@
 // Arrange readable names in two margins. Lines follow the projected 3D anchors.
-export function makeAnnotations(host, parts, onSelect) {
+export function makeAnnotations(
+  host,
+  parts,
+  onSelect,
+  narrowLabelRails = false,
+) {
   const overlay = document.getElementById("annotations");
   const names = document.getElementById("callouts");
   const leaders = document.getElementById("leaders");
@@ -56,9 +61,11 @@ export function makeAnnotations(host, parts, onSelect) {
       let last = -Infinity;
       items.forEach((p, i) => {
         const { button, line, dot } = elements.get(p.id) || make(p.id);
+        const preferred =
+          narrow && narrowLabelRails ? (i === 0 ? top + 14 : bottom - 14) : p.y;
         const target = Math.min(
           bottom - (items.length - i - 1) * gap,
-          Math.max(top, p.y, last + gap),
+          Math.max(top, preferred, last + gap),
         );
         last = target;
         button.style.top = target + "px";

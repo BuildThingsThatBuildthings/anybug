@@ -28,6 +28,7 @@ let state = initial(),
   previous = [],
   scene,
   specimen,
+  catalog,
   byId,
   showTray;
 let gestureBefore = null;
@@ -77,7 +78,11 @@ function setView(view) {
     s.system = "all";
   });
 }
+function controlFor(id) {
+  return byId.get(id)?.control || id;
+}
 function openControl(s, id, value) {
+  id = controlFor(id);
   const controls = specimen.controls;
   if (value && controls[id]?.requires)
     openControl(s, controls[id].requires, true);
@@ -135,7 +140,10 @@ function render() {
       : "Tissue colors are approximate reconstructions.";
   el("interaction-hint").textContent = state.moveTool
     ? "Drag the selected part to move it"
-    : "Drag a cover up to open · Drag empty space to orbit";
+    : state.spread
+      ? "Drag a part to move it · Drag empty space to orbit"
+      : (specimen.dragHint || "Drag a cover up to open") +
+        " · Drag empty space to orbit";
   if (!p && state.spread) {
     notes.innerHTML =
       '<p class="notes-kind">Dissection</p><h2 class="panel-title">Parts of the specimen</h2><p class="description">Drag any loose part to examine it. The anatomy key below names every piece.</p><button class="primary" data-action="key">See all ' +
@@ -162,7 +170,7 @@ function render() {
       '<p class="notes-kind">Inside the specimen</p><h2 class="panel-title">Body systems</h2><p class="description">Tap an organ to see its job. Choose a system to follow its path through the body.</p>';
   } else {
     const sys = specimen.systems[p.system],
-      ctrl = specimen.controls[p.id];
+      ctrl = specimen.controls[controlFor(p.id)];
     notes.innerHTML =
       '<p class="notes-kind"><span class="system-dot" style="--dot:' +
       escape(sys.color) +
@@ -178,20 +186,20 @@ function render() {
     let actions = "";
     if (ctrl)
       actions += button(
-        state.open[p.id] ? ctrl.close : ctrl.open,
+        state.open[controlFor(p.id)] ? ctrl.close : ctrl.open,
         "articulate",
         "primary",
       );
     const child = Object.keys(specimen.controls).find(
       (k) => specimen.controls[k].requires === p.id,
     );
-    if (child && state.open[p.id])
+    if (child && state.open[controlFor(p.id)])
       actions += button(
         "Explore " + byId.get(child).name.toLowerCase(),
         "next-wing",
       );
     if (ctrl) {
-      const percent = Math.round((state.open[p.id] || 0) * 100);
+      const percent = Math.round((state.open[controlFor(p.id)] || 0) * 100);
       notes.insertAdjacentHTML(
         "beforeend",
         '<label class="joint-control">Opening <input id="joint" type="range" min="0" max="100" value="' +
@@ -275,7 +283,7 @@ el("notes").addEventListener("click", (e) => {
       s.selected = specimen.focus;
       if (specimen.controls[s.selected]) openControl(s, s.selected, true);
     }
-    if (action === "articulate") openControl(s, id, !s.open[id]);
+    if (action === "articulate") openControl(s, id, !s.open[controlFor(id)]);
     if (action === "next-wing")
       s.selected = Object.keys(specimen.controls).find(
         (k) => specimen.controls[k].requires === id,
@@ -302,7 +310,9 @@ function preview() {
   el("opacity").setAttribute("aria-valuetext", percent + "% opaque");
   el("translucent").setAttribute("aria-pressed", String(state.opacity < 1));
   if (el("joint")) {
-    const value = Math.round((state.open[state.selected] || 0) * 100);
+    const value = Math.round(
+      (state.open[controlFor(state.selected)] || 0) * 100,
+    );
     el("joint").value = value;
     el("joint-value").textContent = value + "%";
   }
@@ -430,9 +440,27 @@ el("browse").onclick = () => {
   showDialog("Browse parts");
   el("search").oninput = (e) => listParts(e.target.value);
 };
+el("species").onclick = () => {
+  const body = el("dialog-body");
+  body.replaceChildren();
+  for (const item of catalog) {
+    const link = document.createElement("a");
+    link.href = "?specimen=" + encodeURIComponent(item.id);
+    link.className = "part-link";
+    link.textContent = item.name;
+    if (item.id === specimen.id) link.setAttribute("aria-current", "page");
+    body.append(link);
+  }
+  showDialog("Choose a specimen");
+};
 el("guide").onclick = () => {
   el("dialog-body").innerHTML =
-    "<p>Drag a spotted cover up to lift it, or down to close it. A flight wing unfolds the same way. Drag other structures away directly. Drag empty space to turn the specimen, and pinch to zoom.</p><p><b>Break apart</b> spreads the structures and reveals a labeled anatomy key. <b>See through</b> fades the exterior. Adjust the slider to trace the organs inside. Undo retraces one gesture at a time.</p><h3>Reading the model</h3><p>Each specimen is an educational reconstruction. “Species reference” identifies structures informed by studies of the featured species. “Comparative reconstruction” identifies details based on a broader beetle or insect reference. Natural tissue colors are approximate.</p><h3>Specimen references</h3><ul>" +
+    "<p>" +
+    escape(
+      specimen.gestureGuide ||
+        "Drag a spotted cover up to lift it, or down to close it. A flight wing unfolds the same way.",
+    ) +
+    " Drag other structures away directly. Drag empty space to turn the specimen, and pinch to zoom.</p><p><b>Break apart</b> spreads the structures and reveals a labeled anatomy key. <b>See through</b> fades the exterior. Adjust the slider to trace the organs inside. Undo retraces one gesture at a time.</p><h3>Reading the model</h3><p>Each specimen is an educational reconstruction. “Species reference” identifies structures informed by studies of the featured species. “Comparative reconstruction” identifies details based on a related species or general insect anatomy. Natural tissue colors are approximate.</p><h3>Specimen references</h3><ul>" +
     Object.values(specimen.sources)
       .map(
         ([name, url]) =>
@@ -452,12 +480,22 @@ async function json(url) {
   return response.json();
 }
 async function start() {
-  const catalog = await json("./specimens/catalog.json");
+  catalog = await json("./specimens/catalog.json");
   const id =
     new URLSearchParams(location.search).get("specimen") || catalog[0].id;
   if (!catalog.some((s) => s.id === id)) throw Error("Unknown specimen");
   const base = "./specimens/" + encodeURIComponent(id) + "/";
   specimen = await json(base + "anatomy.json");
+  if (specimen.gestureGuide) {
+    el("viewport").setAttribute(
+      "aria-label",
+      "3D specimen. " +
+        specimen.gestureGuide +
+        " Drag empty space to orbit. Use Browse parts for keyboard selection.",
+    );
+    el("opacity").setAttribute("aria-label", "Body opacity");
+    document.querySelector('label[for="opacity"]').textContent = "Body opacity";
+  }
   byId = new Map(specimen.parts.map((p) => [p.id, p]));
   document.title = specimen.name + " · AnyBug";
   el("name").textContent = specimen.name;

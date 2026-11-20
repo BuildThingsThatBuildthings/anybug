@@ -1,6 +1,6 @@
 # AnyBug
 
-Explore a bug from the outside in. The first specimen is a seven-spotted ladybug with 44 selectable structures, working wing covers, folding flight wings, and eight internal body systems.
+Explore a bug from the outside in. Choose a seven-spotted ladybug with 44 selectable structures or a European praying mantis with 59. Each specimen has a natural exterior, a translucent view, and an illustrated dissection key.
 
 ![AnyBug specimen viewer showing the seven-spotted ladybug](docs/ladybug.webp)
 
@@ -15,6 +15,12 @@ python3 serve.py
 Open **http://127.0.0.1:4179/** in a browser with WebGL 2. Python 3.9+ is sufficient for viewing. The ready-built specimen, scripts, fonts, and rendering library are included. Everything loads locally.
 
 For a phone or tablet on the same trusted Wi-Fi, run `python3 serve.py --lan` and open `http://<computer-local-IP>:4179/` on that device. The server serves viewer assets only. Use `--port` to choose a different port.
+
+## Explore the praying mantis
+
+Choose **Specimens → European praying mantis**, or open `http://127.0.0.1:4179/?specimen=european-mantis`. Drag either folded front leg up to open it halfway. Reverse the drag to close it while the opposite leg holds its pose. Use **See through** to find the muscle inside the grasping thigh. Choose **Break apart** to pull individual structures away and read all 59 names, then **Reassemble**. [Mantis anatomy and sources](specimens/european-mantis/README.md)
+
+![European mantis in the AnyBug viewer](docs/european-mantis.webp)
 
 ## Explore the ladybug
 
@@ -36,7 +42,7 @@ With Blender 5.2 and Python 3.9+ installed:
 python3 rebuild.py seven-spot
 ```
 
-For a new species, an author or coding agent first uses references to write the anatomy brief and Blender builder. This command regenerates an authored specimen.
+Use `python3 rebuild.py european-mantis` for the mantis. For a new species, an author or coding agent first uses references to write the anatomy brief and Blender builder. This command regenerates an authored specimen.
 
 The pipeline writes the editable Blender master, animated GLB, and anatomy manifest, then verifies the GLB in a new Blender process before installing the outputs. Set `BLENDER` to an executable if it is outside your PATH. The shared viewer reads the species catalog. [Add a species](docs/ADDING-A-SPECIES.md) · [Verification](tests/README.md)
 
