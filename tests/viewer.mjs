@@ -422,7 +422,7 @@ try {
       engine +
         " " +
         name +
-        ": passed ladybug and mantis dissection, behavior playback, chapter replay, pose restoration, labels and local-only loading.",
+        ": passed dissection, behavior playback for all three specimens, chapter replay, pose restoration, labels and local-only loading.",
     );
     await page.close();
   }

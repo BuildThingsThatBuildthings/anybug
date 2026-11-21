@@ -37,12 +37,14 @@ export async function checkBehaviors({
       startPose,
       "Seeking moves the real model",
     );
-    await page.locator("#motion-play").click();
+    // Test pause with the whole sequence available. On a slow renderer the
+    // final action can finish while a pointer click is waiting to be dispatched.
+    await page.locator("#motion-seek").fill("0");
+    await page.getByRole("button", { name: "Play", exact: true }).click();
     await page.waitForFunction(
-      (t) => Number(document.querySelector("#motion-seek").value) > t + 0.06,
-      time,
+      () => Number(document.querySelector("#motion-seek").value) > 0.06,
     );
-    await page.locator("#motion-play").click();
+    await page.getByRole("button", { name: "Pause", exact: true }).click();
     const paused = await page.locator("#motion-seek").inputValue();
     await frames();
     assert.equal(await page.locator("#motion-seek").inputValue(), paused);
