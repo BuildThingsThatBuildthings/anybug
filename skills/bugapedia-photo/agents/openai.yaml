@@ -1,0 +1,4 @@
+interface:
+  display_name: "Bugapedia Photo"
+  short_description: "Turn a bug photo into an animated 3D specimen"
+  default_prompt: "Use $bugapedia-photo to build the bug in my uploaded photo as an animated, fully labeled 3D specimen I can explore and take apart."

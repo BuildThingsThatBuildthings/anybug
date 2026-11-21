@@ -63,3 +63,17 @@ Species identification is curator-led. Visitors can include a tentative identifi
 ## License
 
 AnyBug code, original models, textures, animations, and educational material use the MIT license. Credits include the AnyMachine workflow inspiration and the licenses for the bundled viewer dependencies. [MIT license](LICENSE) · [Asset sources and credits](ASSETS.md)
+
+## Build a bug from a ChatGPT photo
+
+Bugapedia Photo turns an uploaded arthropod photo into a private, labeled specimen with native animation, draggable joints and an offline explorer. Each build includes editable source and notes on what the photo shows and what was reconstructed.
+
+Package the ChatGPT skill from this checkout with Python 3.10 or later.
+
+```sh
+python3 scripts/package-photo-skill.py bugapedia-photo.zip
+```
+
+In a ChatGPT workspace with Skills enabled, open **Plugins → Skills → Create → Upload from your computer** and choose the ZIP. Attach a bug photo in a chat with file execution and ask **“Build this bug as an animated Bugapedia specimen.”** The downloaded explorer opens locally in a WebGL 2 browser. A photo build stays outside the public catalog until its owner reviews it.
+
+[Skill instructions](skills/bugapedia-photo/SKILL.md) · [Source format and local example](skills/bugapedia-photo/references/format.md)
