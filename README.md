@@ -1,6 +1,6 @@
 # AnyBug
 
-Explore a bug from the outside in. Choose a seven-spotted ladybug with 44 selectable structures or a European praying mantis with 59. Each specimen has a natural exterior, a translucent view, and an illustrated dissection key.
+Explore a bug from the outside in. The local catalog includes the seven-spotted ladybug (44 selectable structures), European praying mantis (59) and earwig reference study (68). Each specimen has a natural exterior, a translucent view, and an illustrated dissection key.
 
 ![AnyBug specimen viewer showing the seven-spotted ladybug](docs/ladybug.webp)
 
@@ -66,14 +66,12 @@ AnyBug code, original models, textures, animations, and educational material use
 
 ## Build a bug from a ChatGPT photo
 
-Bugapedia Photo turns an uploaded arthropod photo into a private, labeled specimen with native animation, draggable joints and an offline explorer. Each build includes editable source and notes on what the photo shows and what was reconstructed.
-
-Package the ChatGPT skill from this checkout with Python 3.10 or later.
+Bugapedia Photo uses the original AnyBug Blender workflow. A photo supplies identification evidence and external landmarks. Species references guide the geometry, internal anatomy and joint behavior. Each specimen includes evidence notes and unresolved anatomy.
 
 ```sh
 python3 scripts/package-photo-skill.py bugapedia-photo.zip
 ```
 
-In a ChatGPT workspace with Skills enabled, open **Plugins → Skills → Create → Upload from your computer** and choose the ZIP. Attach a bug photo in a chat with file execution and ask **“Build this bug as an animated Bugapedia specimen.”** The downloaded explorer opens locally in a WebGL 2 browser. A photo build stays outside the public catalog until its owner reviews it.
+In a ChatGPT workspace with Skills enabled, open **Plugins → Skills → Create → Upload from your computer**. A chat with access to Blender can deliver the editable master, GLB and explorer. A Python-only chat produces a private project ZIP with the authored species files and original Blender pipeline. Extract it on a machine with Blender 5.2 and run `python3 finish.py`.
 
-[Skill instructions](skills/bugapedia-photo/SKILL.md) · [Source format and local example](skills/bugapedia-photo/references/format.md)
+[Skill instructions](skills/bugapedia-photo/SKILL.md) · [Earwig reference study](specimens/earwig-study/README.md)

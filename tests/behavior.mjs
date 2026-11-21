@@ -10,6 +10,7 @@ export async function checkBehaviors({
   for (const [id, time, caption] of [
     ["european-mantis", 5.64, "Reach and grasp"],
     ["seven-spot", 6.9, "Fly and land"],
+    ["earwig-study", 6.8, "Open the forceps"],
   ]) {
     await page.goto(base + "?specimen=" + id);
     await page.locator("[data-ready=true]").waitFor();
@@ -51,7 +52,7 @@ export async function checkBehaviors({
     );
     assert.equal(
       await page.locator("#motion-caption").textContent(),
-      id === "seven-spot" ? "Walk" : "Scan",
+      ({ "seven-spot": "Walk", "european-mantis": "Scan", "earwig-study": "Sweep the feelers" })[id],
     );
     await page.getByRole("button", { name: "Back to dissection" }).click();
     await frames();

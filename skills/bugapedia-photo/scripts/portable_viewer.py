@@ -30,9 +30,9 @@ def template(repo):
     const body = el("dialog-body");
     const guide = document.createDocumentFragment();
     const add = (tag,text) => {const node=document.createElement(tag); node.textContent=text; guide.append(node); return node;};
-    add("h3","About this reconstruction");
-    for (const line of Object.values(specimen.observation)) add("p",line);
-    for (const item of specimen.fieldNotes) {
+    if (specimen.observation) add("h3","About this reconstruction");
+    for (const line of Object.values(specimen.observation || {})) add("p",line);
+    for (const item of specimen.fieldNotes || []) {
       add("h3",item.topic);
       const paragraph=add("p",item.text+" ");
       const source=document.createElement("a");

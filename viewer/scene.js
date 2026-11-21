@@ -245,9 +245,12 @@ export async function makeScene(host, url, manifest, events) {
       current?.view === "outside"
         ? Math.max(0, ...Object.values(current.open).map(Number))
         : 0;
+    const restFrame = current?.view === "inside" && !current.spread
+      ? (manifest.view.interiorFrameScale ?? 1)
+      : 1;
     const margin = actor?.visible
       ? manifest.behavior.frameScale
-      : 1 +
+      : restFrame +
         (manifest.view.openingMargin ?? 0.37) * opening +
         1.05 * spreadAmount;
     const frame =

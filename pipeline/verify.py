@@ -110,6 +110,41 @@ if brief["id"] == "european-mantis":
         assert (center(f"forefoot_{side}") - folded).length > 0.012
     bpy.context.scene.frame_set(1)
     assert 0.048 < (center("head") - center("cercus_l")).length < 0.066
+if brief["id"] == "earwig-study":
+    # A valid label inventory alone will accept anatomically misplaced geometry.
+    systems = {part["id"]: part["system"] for part in brief["parts"]}
+    assert {
+        "foregut",
+        "crop",
+        "gizzard",
+        "midgut",
+        "pylorus",
+        "hindgut",
+        "rectum",
+    } <= systems.keys()
+    assert set(brief["controls"]) == {"forceps_l", "forceps_r", "cover_l", "cover_r"}
+    bpy.context.scene.frame_set(1)
+    deps = bpy.context.evaluated_depsgraph_get()
+    forward_axis = Vector((0, 1, 0))
+    for angle in [(0, 0, 1), (1, 0, 0.32), (-1, 0, 0.32), (0, 0, -1)]:
+        direction = Vector(angle).normalized()
+        lateral = forward_axis.cross(direction)
+        for i in range(-66, 67, 2):
+            for j in range(-118, 129, 2):
+                start = (
+                    lateral * i * 0.025 + forward_axis * j * 0.05 + direction * 15
+                ) * 0.001
+                hit, _, _, _, obj, _ = bpy.context.scene.ray_cast(
+                    deps, start, -direction
+                )
+                if hit:
+                    while obj and "partId" not in obj:
+                        obj = obj.parent
+                    assert obj and systems[obj["partId"]] == "exterior", (
+                        "Internal geometry visible through closed body",
+                        angle,
+                        obj and obj.get("partId"),
+                    )
 print(
     f"Verified {len(brief['parts'])} anatomical parts and {len(brief['controls'])} articulated controls."
 )

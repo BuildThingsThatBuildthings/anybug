@@ -1,4 +1,4 @@
 interface:
   display_name: "Bugapedia Photo"
-  short_description: "Turn a bug photo into an animated 3D specimen"
-  default_prompt: "Use $bugapedia-photo to build the bug in my uploaded photo as an animated, fully labeled 3D specimen I can explore and take apart."
+  short_description: "Build an animated 3D bug with the AnyBug Blender pipeline"
+  default_prompt: "Use $bugapedia-photo on my photo. Identify only what the image supports, then build a labeled Blender specimen with anatomically referenced interiors and native animations."

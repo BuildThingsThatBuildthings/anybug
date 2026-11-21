@@ -1,0 +1,1294 @@
+{
+  "id": "earwig-study",
+  "name": "European earwig",
+  "scientific": "Forficula auricularia",
+  "stage": "Adult male",
+  "lengthMm": 12,
+  "scaleNote": "Approx. 12 mm model body length, excluding forceps; the reference photograph has no scale.",
+  "model": "specimen.glb",
+  "focus": "forceps_l",
+  "title": "Inside an earwig",
+  "overview": "Open one rear pincer, or switch to Interior and find the large food-storage sac beneath the short forewings.",
+  "dragHint": "Drag a pincer or a short forewing upward",
+  "gestureGuide": "Drag a pincer up to open it. Lift a short forewing to see the folded wing underneath.",
+  "landmarks": [
+    "forceps_l",
+    "shield",
+    "antenna_r",
+    "leg1_l"
+  ],
+  "controls": {
+    "cover_l": {
+      "open": "Lift forewing",
+      "close": "Lower forewing"
+    },
+    "forceps_l": {
+      "open": "Open pincer",
+      "close": "Close pincer"
+    },
+    "cover_r": {
+      "open": "Lift forewing",
+      "close": "Lower forewing"
+    },
+    "forceps_r": {
+      "open": "Open pincer",
+      "close": "Close pincer"
+    }
+  },
+  "spread": {
+    "head": [
+      0,
+      1,
+      -2.8
+    ],
+    "labrum": [
+      0,
+      0.4,
+      -1.05
+    ],
+    "chest": [
+      0,
+      -0.85,
+      -0.6
+    ],
+    "shield": [
+      0,
+      1.9,
+      -0.8
+    ],
+    "sternites": [
+      0,
+      -2.5,
+      0.2
+    ],
+    "tergite_1": [
+      0,
+      1.1,
+      -1.36
+    ],
+    "tergite_2": [
+      0,
+      1.2100000000000002,
+      -1.02
+    ],
+    "tergite_3": [
+      0,
+      1.32,
+      -0.68
+    ],
+    "tergite_4": [
+      0,
+      1.4300000000000002,
+      -0.34
+    ],
+    "tergite_5": [
+      0,
+      1.54,
+      0.0
+    ],
+    "tergite_6": [
+      0,
+      1.6500000000000001,
+      0.34
+    ],
+    "tergite_7": [
+      0,
+      1.7600000000000002,
+      0.68
+    ],
+    "tergite_8": [
+      0,
+      1.87,
+      1.02
+    ],
+    "tergite_9": [
+      0,
+      1.98,
+      1.36
+    ],
+    "tergite_10": [
+      0,
+      2.09,
+      1.7000000000000002
+    ],
+    "terminal": [
+      0,
+      0.2,
+      1.6
+    ],
+    "eye_l": [
+      -1.3,
+      0.5,
+      -0.35
+    ],
+    "antenna_l": [
+      -1.25,
+      0.55,
+      -1.5
+    ],
+    "jaw_l": [
+      -0.85,
+      -0.55,
+      -0.95
+    ],
+    "palp_l": [
+      -0.9,
+      -0.75,
+      -1.15
+    ],
+    "cover_l": [
+      -1.6,
+      2,
+      0.4
+    ],
+    "wing_l": [
+      -1.8,
+      1.25,
+      0.6
+    ],
+    "leg1_l": [
+      -1.8,
+      -1.2,
+      -1
+    ],
+    "leg2_l": [
+      -1.8,
+      -1.2,
+      0
+    ],
+    "leg3_l": [
+      -1.8,
+      -1.2,
+      1
+    ],
+    "forceps_l": [
+      -1.6,
+      0.4,
+      2.0
+    ],
+    "eye_r": [
+      1.3,
+      0.5,
+      -0.35
+    ],
+    "antenna_r": [
+      1.25,
+      0.55,
+      -1.5
+    ],
+    "jaw_r": [
+      0.85,
+      -0.55,
+      -0.95
+    ],
+    "palp_r": [
+      0.9,
+      -0.75,
+      -1.15
+    ],
+    "cover_r": [
+      1.6,
+      2,
+      0.4
+    ],
+    "wing_r": [
+      1.8,
+      1.25,
+      0.6
+    ],
+    "leg1_r": [
+      1.8,
+      -1.2,
+      -1
+    ],
+    "leg2_r": [
+      1.8,
+      -1.2,
+      0
+    ],
+    "leg3_r": [
+      1.8,
+      -1.2,
+      1
+    ],
+    "forceps_r": [
+      1.6,
+      0.4,
+      2.0
+    ],
+    "foregut": [
+      -1.1,
+      0.4,
+      -2.0
+    ],
+    "crop": [
+      -2.3,
+      0.9,
+      -1.0
+    ],
+    "gizzard": [
+      -1.2,
+      1.3,
+      0.0
+    ],
+    "midgut": [
+      -1.85,
+      0.45,
+      1.3
+    ],
+    "pylorus": [
+      0.65,
+      -0.8,
+      0.6
+    ],
+    "hindgut": [
+      1.2,
+      -0.7,
+      1.45
+    ],
+    "rectum": [
+      0.4,
+      -0.55,
+      2.45
+    ],
+    "tubules_l": [
+      -2.7,
+      0.1,
+      1.1
+    ],
+    "trachea_l": [
+      -2.5,
+      1.2,
+      0.6
+    ],
+    "head_air_l": [
+      -1.6,
+      1.0,
+      -2.3
+    ],
+    "testis_l": [
+      -2.1,
+      -0.7,
+      1.6
+    ],
+    "sperm_duct_l": [
+      -1.35,
+      -1.15,
+      1.55
+    ],
+    "adductor_l": [
+      -1.5,
+      0.65,
+      -1.5
+    ],
+    "cercal_muscle_l": [
+      -1.8,
+      0.65,
+      2.35
+    ],
+    "glands_l": [
+      -1.8,
+      1.6,
+      0.1
+    ],
+    "fat_l": [
+      -1.5,
+      -1.5,
+      0.2
+    ],
+    "tubules_r": [
+      2.7,
+      0.1,
+      1.1
+    ],
+    "trachea_r": [
+      2.5,
+      1.2,
+      0.6
+    ],
+    "head_air_r": [
+      1.6,
+      1.0,
+      -2.3
+    ],
+    "testis_r": [
+      2.1,
+      -0.7,
+      1.6
+    ],
+    "sperm_duct_r": [
+      1.35,
+      -1.15,
+      1.55
+    ],
+    "adductor_r": [
+      1.5,
+      0.65,
+      -1.5
+    ],
+    "cercal_muscle_r": [
+      1.8,
+      0.65,
+      2.35
+    ],
+    "glands_r": [
+      1.8,
+      1.6,
+      0.1
+    ],
+    "fat_r": [
+      1.5,
+      -1.5,
+      0.2
+    ],
+    "vesicle": [
+      0.25,
+      -1.6,
+      1.7
+    ],
+    "ejaculatory_duct": [
+      -0.5,
+      -1.2,
+      2.15
+    ],
+    "heart": [
+      0,
+      2.0,
+      0.6
+    ],
+    "brain": [
+      0,
+      1.5,
+      -2.0
+    ],
+    "subbrain": [
+      0,
+      -1.2,
+      -1.8
+    ],
+    "cord": [
+      0,
+      -1.8,
+      0.5
+    ],
+    "tentorium": [
+      0,
+      -1.15,
+      -2.4
+    ]
+  },
+  "systems": {
+    "exterior": {
+      "name": "Exterior",
+      "color": "#795037"
+    },
+    "digestive": {
+      "name": "Digestion",
+      "color": "#e49b4c"
+    },
+    "excretory": {
+      "name": "Waste removal",
+      "color": "#ae9534"
+    },
+    "respiratory": {
+      "name": "Breathing",
+      "color": "#389c99"
+    },
+    "circulatory": {
+      "name": "Circulation",
+      "color": "#d45d64"
+    },
+    "nervous": {
+      "name": "Nerves and senses",
+      "color": "#9674b6"
+    },
+    "muscular": {
+      "name": "Muscles",
+      "color": "#ba7177"
+    },
+    "reproductive": {
+      "name": "Reproduction",
+      "color": "#779a5e"
+    },
+    "storage": {
+      "name": "Energy reserves",
+      "color": "#c8a150"
+    },
+    "glandular": {
+      "name": "Defensive glands",
+      "color": "#567ea8"
+    },
+    "support": {
+      "name": "Internal supports",
+      "color": "#b9a178"
+    }
+  },
+  "sources": {
+    "photo": [
+      "Jack Kelly Clark · UC IPM adult male on fruit",
+      "https://ipm.ucanr.edu/PMG/F/I-DM-FAUR-AD.005.html"
+    ],
+    "adult": [
+      "University of Florida · European earwig",
+      "https://ask.ifas.ufl.edu/publication/IN875"
+    ],
+    "head": [
+      "Neubert et al. · Head anatomy, figures 1–14",
+      "https://www.senckenberg.de/wp-content/uploads/2019/07/04_asp_75_1_neubert_99-124.pdf"
+    ],
+    "gut": [
+      "Lhoste · Dissected digestive tract, figure 1",
+      "https://doi.org/10.3406/bsef.1941.15490"
+    ],
+    "air": [
+      "Herhold et al. · Earwig tracheal CT, figures 47–49",
+      "https://zenodo.org/records/7733234"
+    ],
+    "repro": [
+      "Popham · Reproductive organs of the common earwig",
+      "https://doi.org/10.1111/j.1469-7998.1965.tb05198.x"
+    ],
+    "male": [
+      "Hudson · Male anatomy, figure 16",
+      "https://doi.org/10.1080/03036758.1973.10430603"
+    ],
+    "glands": [
+      "Eisner · Adult tergal gland location and outlets",
+      "https://groups.csail.mit.edu/mac/projects/psyche/67/67-062.html"
+    ],
+    "nerve": [
+      "NC State · Insect nervous system",
+      "https://genent.cals.ncsu.edu/nervous/"
+    ],
+    "heart": [
+      "NC State · Insect circulatory system",
+      "https://genent.cals.ncsu.edu/bug-bytes/circulatory-system/"
+    ],
+    "fat": [
+      "Arrese & Soulages · Insect fat body and storage",
+      "https://doi.org/10.1146/annurev-ento-112408-085356"
+    ]
+  },
+  "parts": [
+    {
+      "id": "head",
+      "name": "Head capsule",
+      "term": "Cranium",
+      "system": "exterior",
+      "source": "head",
+      "evidence": "Species reference",
+      "short": "The jaws point forward from the head.",
+      "detail": "The dorsal seams form a branching pattern. The eyes lie laterally and the antennae attach in front of them.",
+      "parent": null
+    },
+    {
+      "id": "labrum",
+      "name": "Upper lip",
+      "term": "Labrum",
+      "system": "exterior",
+      "source": "head",
+      "evidence": "Species reference",
+      "short": "The upper lip lies in front of the head.",
+      "detail": "The broad plate sits above the cutting edges of the mandibles.",
+      "parent": "head"
+    },
+    {
+      "id": "chest",
+      "name": "Leg-bearing thorax",
+      "term": "Thoracic cuticle",
+      "system": "exterior",
+      "source": "adult",
+      "evidence": "Species reference",
+      "short": "The legs attach to three chest segments.",
+      "detail": "The front shield and the short forewings lift or separate from this support.",
+      "parent": null
+    },
+    {
+      "id": "shield",
+      "name": "Front shield",
+      "term": "Pronotum",
+      "system": "exterior",
+      "source": "photo",
+      "evidence": "Visible in reference photograph",
+      "short": "A pale rim outlines the shield behind the head.",
+      "detail": "Its broad dark disc has rounded rear corners and a fine median line.",
+      "parent": "chest"
+    },
+    {
+      "id": "sternites",
+      "name": "Abdominal belly plates",
+      "term": "Sternites",
+      "system": "exterior",
+      "source": "adult",
+      "evidence": "Species reference",
+      "short": "A row of plates protects the underside.",
+      "detail": "The ventral plates meet flexible cuticle along the sides.",
+      "parent": null
+    },
+    {
+      "id": "tergite_1",
+      "name": "Abdominal back plate 1",
+      "term": "Abdominal tergite",
+      "system": "exterior",
+      "source": "adult",
+      "evidence": "Species reference",
+      "short": "This plate overlaps the next section of abdomen.",
+      "detail": "Its thin posterior lip and the flexible cuticle beneath allow the long abdomen to bend.",
+      "parent": null
+    },
+    {
+      "id": "tergite_2",
+      "name": "Abdominal back plate 2",
+      "term": "Abdominal tergite",
+      "system": "exterior",
+      "source": "adult",
+      "evidence": "Species reference",
+      "short": "This plate overlaps the next section of abdomen.",
+      "detail": "Its thin posterior lip and the flexible cuticle beneath allow the long abdomen to bend.",
+      "parent": null
+    },
+    {
+      "id": "tergite_3",
+      "name": "Abdominal back plate 3",
+      "term": "Abdominal tergite",
+      "system": "exterior",
+      "source": "adult",
+      "evidence": "Species reference",
+      "short": "This plate overlaps the next section of abdomen.",
+      "detail": "Its thin posterior lip and the flexible cuticle beneath allow the long abdomen to bend.",
+      "parent": null
+    },
+    {
+      "id": "tergite_4",
+      "name": "Abdominal back plate 4",
+      "term": "Abdominal tergite",
+      "system": "exterior",
+      "source": "adult",
+      "evidence": "Species reference",
+      "short": "This plate overlaps the next section of abdomen.",
+      "detail": "Its thin posterior lip and the flexible cuticle beneath allow the long abdomen to bend.",
+      "parent": null
+    },
+    {
+      "id": "tergite_5",
+      "name": "Abdominal back plate 5",
+      "term": "Abdominal tergite",
+      "system": "exterior",
+      "source": "adult",
+      "evidence": "Species reference",
+      "short": "This plate overlaps the next section of abdomen.",
+      "detail": "Its thin posterior lip and the flexible cuticle beneath allow the long abdomen to bend.",
+      "parent": null
+    },
+    {
+      "id": "tergite_6",
+      "name": "Abdominal back plate 6",
+      "term": "Abdominal tergite",
+      "system": "exterior",
+      "source": "adult",
+      "evidence": "Species reference",
+      "short": "This plate overlaps the next section of abdomen.",
+      "detail": "Its thin posterior lip and the flexible cuticle beneath allow the long abdomen to bend.",
+      "parent": null
+    },
+    {
+      "id": "tergite_7",
+      "name": "Abdominal back plate 7",
+      "term": "Abdominal tergite",
+      "system": "exterior",
+      "source": "adult",
+      "evidence": "Species reference",
+      "short": "This plate overlaps the next section of abdomen.",
+      "detail": "Its thin posterior lip and the flexible cuticle beneath allow the long abdomen to bend.",
+      "parent": null
+    },
+    {
+      "id": "tergite_8",
+      "name": "Abdominal back plate 8",
+      "term": "Abdominal tergite",
+      "system": "exterior",
+      "source": "adult",
+      "evidence": "Species reference",
+      "short": "This plate overlaps the next section of abdomen.",
+      "detail": "Its thin posterior lip and the flexible cuticle beneath allow the long abdomen to bend.",
+      "parent": null
+    },
+    {
+      "id": "tergite_9",
+      "name": "Abdominal back plate 9",
+      "term": "Abdominal tergite",
+      "system": "exterior",
+      "source": "adult",
+      "evidence": "Species reference",
+      "short": "This plate overlaps the next section of abdomen.",
+      "detail": "Its thin posterior lip and the flexible cuticle beneath allow the long abdomen to bend.",
+      "parent": null
+    },
+    {
+      "id": "tergite_10",
+      "name": "Abdominal back plate 10",
+      "term": "Abdominal tergite",
+      "system": "exterior",
+      "source": "adult",
+      "evidence": "Species reference",
+      "short": "This plate overlaps the next section of abdomen.",
+      "detail": "Its thin posterior lip and the flexible cuticle beneath allow the long abdomen to bend.",
+      "parent": null
+    },
+    {
+      "id": "terminal",
+      "name": "Tail bearing plate",
+      "term": "Terminal abdominal plate",
+      "system": "exterior",
+      "source": "male",
+      "evidence": "Species reference",
+      "short": "The curved pincers sit on either side of the tail.",
+      "detail": "The broad basal sockets carry the forceps. Their dark margins frame the small central terminal structures.",
+      "parent": null
+    },
+    {
+      "id": "eye_l",
+      "name": "Left compound eye",
+      "term": "Compound eye",
+      "system": "exterior",
+      "source": "head",
+      "evidence": "Species reference",
+      "short": "Hundreds of facets sample the scene.",
+      "detail": "The exposed surface is a small oval on the side of the head. Facet density is illustrative.",
+      "parent": "head"
+    },
+    {
+      "id": "antenna_l",
+      "name": "Left feeler",
+      "term": "Antenna",
+      "system": "exterior",
+      "source": "adult",
+      "evidence": "Species reference",
+      "short": "The long feeler has fourteen jointed segments.",
+      "detail": "The thick basal segment supports a slender flagellum with sensory hairs.",
+      "parent": "head"
+    },
+    {
+      "id": "jaw_l",
+      "name": "Left jaw",
+      "term": "Mandible",
+      "system": "exterior",
+      "source": "head",
+      "evidence": "Species reference",
+      "short": "The jaw grips and cuts food.",
+      "detail": "The mesal edge bears teeth and the broader basal region processes food.",
+      "parent": "head"
+    },
+    {
+      "id": "palp_l",
+      "name": "Left mouth feeler",
+      "term": "Maxillary palp",
+      "system": "exterior",
+      "source": "head",
+      "evidence": "Species reference",
+      "short": "This small feeler explores food near the jaws.",
+      "detail": "The terminal segment carries sensory structures. Segments are grouped as one selectable palp.",
+      "parent": "head"
+    },
+    {
+      "id": "cover_l",
+      "name": "Left short forewing",
+      "term": "Tegmen",
+      "system": "exterior",
+      "source": "photo",
+      "evidence": "Visible in reference photograph",
+      "short": "Drag the leathery forewing to reveal the folded flight wing.",
+      "detail": "The darker disc and the paler outer edge follow the photographed adult. Its surface has shallow lengthwise ridges.",
+      "parent": "chest"
+    },
+    {
+      "id": "wing_l",
+      "name": "Left folded flight wing",
+      "term": "Hindwing",
+      "system": "exterior",
+      "source": "adult",
+      "evidence": "Species reference",
+      "short": "A thin hindwing folds into a small packet.",
+      "detail": "Pleats and radiating veins suggest the folded membrane. The crease pattern is simplified; this view shows the resting packet.",
+      "parent": "chest"
+    },
+    {
+      "id": "leg1_l",
+      "name": "Left front leg",
+      "term": "Thoracic walking leg",
+      "system": "exterior",
+      "source": "adult",
+      "evidence": "Species reference",
+      "short": "The leg bends at the knee and sets its foot on the ground.",
+      "detail": "The coxa, femur, tibia and tarsus move about separate pivots. Two claws sit at the tip. The walking sequence illustrates contact and recovery.",
+      "parent": "chest"
+    },
+    {
+      "id": "leg2_l",
+      "name": "Left middle leg",
+      "term": "Thoracic walking leg",
+      "system": "exterior",
+      "source": "adult",
+      "evidence": "Species reference",
+      "short": "The leg bends at the knee and sets its foot on the ground.",
+      "detail": "The coxa, femur, tibia and tarsus move about separate pivots. Two claws sit at the tip. The walking sequence illustrates contact and recovery.",
+      "parent": "chest"
+    },
+    {
+      "id": "leg3_l",
+      "name": "Left hind leg",
+      "term": "Thoracic walking leg",
+      "system": "exterior",
+      "source": "adult",
+      "evidence": "Species reference",
+      "short": "The leg bends at the knee and sets its foot on the ground.",
+      "detail": "The coxa, femur, tibia and tarsus move about separate pivots. Two claws sit at the tip. The walking sequence illustrates contact and recovery.",
+      "parent": "chest"
+    },
+    {
+      "id": "forceps_l",
+      "name": "Left pincer",
+      "term": "Forceps-like cercus",
+      "system": "exterior",
+      "source": "photo",
+      "evidence": "Visible in reference photograph",
+      "short": "Drag the curved pincer open and examine its toothed base.",
+      "detail": "The stout, flattened root narrows to a curved dark tip. The tooth row lies near the base on the inner margin.",
+      "parent": "terminal"
+    },
+    {
+      "id": "eye_r",
+      "name": "Right compound eye",
+      "term": "Compound eye",
+      "system": "exterior",
+      "source": "head",
+      "evidence": "Species reference",
+      "short": "Hundreds of facets sample the scene.",
+      "detail": "The exposed surface is a small oval on the side of the head. Facet density is illustrative.",
+      "parent": "head"
+    },
+    {
+      "id": "antenna_r",
+      "name": "Right feeler",
+      "term": "Antenna",
+      "system": "exterior",
+      "source": "adult",
+      "evidence": "Species reference",
+      "short": "The long feeler has fourteen jointed segments.",
+      "detail": "The thick basal segment supports a slender flagellum with sensory hairs.",
+      "parent": "head"
+    },
+    {
+      "id": "jaw_r",
+      "name": "Right jaw",
+      "term": "Mandible",
+      "system": "exterior",
+      "source": "head",
+      "evidence": "Species reference",
+      "short": "The jaw grips and cuts food.",
+      "detail": "The mesal edge bears teeth and the broader basal region processes food.",
+      "parent": "head"
+    },
+    {
+      "id": "palp_r",
+      "name": "Right mouth feeler",
+      "term": "Maxillary palp",
+      "system": "exterior",
+      "source": "head",
+      "evidence": "Species reference",
+      "short": "This small feeler explores food near the jaws.",
+      "detail": "The terminal segment carries sensory structures. Segments are grouped as one selectable palp.",
+      "parent": "head"
+    },
+    {
+      "id": "cover_r",
+      "name": "Right short forewing",
+      "term": "Tegmen",
+      "system": "exterior",
+      "source": "photo",
+      "evidence": "Visible in reference photograph",
+      "short": "Drag the leathery forewing to reveal the folded flight wing.",
+      "detail": "The darker disc and the paler outer edge follow the photographed adult. Its surface has shallow lengthwise ridges.",
+      "parent": "chest"
+    },
+    {
+      "id": "wing_r",
+      "name": "Right folded flight wing",
+      "term": "Hindwing",
+      "system": "exterior",
+      "source": "adult",
+      "evidence": "Species reference",
+      "short": "A thin hindwing folds into a small packet.",
+      "detail": "Pleats and radiating veins suggest the folded membrane. The crease pattern is simplified; this view shows the resting packet.",
+      "parent": "chest"
+    },
+    {
+      "id": "leg1_r",
+      "name": "Right front leg",
+      "term": "Thoracic walking leg",
+      "system": "exterior",
+      "source": "adult",
+      "evidence": "Species reference",
+      "short": "The leg bends at the knee and sets its foot on the ground.",
+      "detail": "The coxa, femur, tibia and tarsus move about separate pivots. Two claws sit at the tip. The walking sequence illustrates contact and recovery.",
+      "parent": "chest"
+    },
+    {
+      "id": "leg2_r",
+      "name": "Right middle leg",
+      "term": "Thoracic walking leg",
+      "system": "exterior",
+      "source": "adult",
+      "evidence": "Species reference",
+      "short": "The leg bends at the knee and sets its foot on the ground.",
+      "detail": "The coxa, femur, tibia and tarsus move about separate pivots. Two claws sit at the tip. The walking sequence illustrates contact and recovery.",
+      "parent": "chest"
+    },
+    {
+      "id": "leg3_r",
+      "name": "Right hind leg",
+      "term": "Thoracic walking leg",
+      "system": "exterior",
+      "source": "adult",
+      "evidence": "Species reference",
+      "short": "The leg bends at the knee and sets its foot on the ground.",
+      "detail": "The coxa, femur, tibia and tarsus move about separate pivots. Two claws sit at the tip. The walking sequence illustrates contact and recovery.",
+      "parent": "chest"
+    },
+    {
+      "id": "forceps_r",
+      "name": "Right pincer",
+      "term": "Forceps-like cercus",
+      "system": "exterior",
+      "source": "photo",
+      "evidence": "Visible in reference photograph",
+      "short": "Drag the curved pincer open and examine its toothed base.",
+      "detail": "The stout, flattened root narrows to a curved dark tip. The tooth row lies near the base on the inner margin.",
+      "parent": "terminal"
+    },
+    {
+      "id": "foregut",
+      "name": "Throat and food passage",
+      "term": "Pharynx and oesophagus",
+      "system": "digestive",
+      "source": "gut",
+      "evidence": "Species reference",
+      "short": "Food travels back from the mouth into the crop.",
+      "detail": "The narrow passage runs under the brain. The specimen study describes a continuous transition between pharynx and oesophagus.",
+      "parent": null
+    },
+    {
+      "id": "crop",
+      "name": "Food-storage sac",
+      "term": "Crop",
+      "system": "digestive",
+      "source": "gut",
+      "evidence": "Species reference",
+      "short": "This large pouch can hold a meal.",
+      "detail": "Lhoste describes it spanning the thorax and first visible abdominal ring. Its fullness changes; the model shows an illustrative state.",
+      "parent": null
+    },
+    {
+      "id": "gizzard",
+      "name": "Food grinder",
+      "term": "Proventriculus",
+      "system": "digestive",
+      "source": "gut",
+      "evidence": "Species reference",
+      "short": "A muscular chamber works food before it enters the midgut.",
+      "detail": "The proventriculus lies directly behind the crop and helps keep material moving toward the midgut.",
+      "parent": null
+    },
+    {
+      "id": "midgut",
+      "name": "Digestive stomach",
+      "term": "Midgut",
+      "system": "digestive",
+      "source": "gut",
+      "evidence": "Species reference",
+      "short": "This stretch of gut absorbs nutrients.",
+      "detail": "Its tapered outline follows the horn-like stomach described in the dissection. This species lacks gastric caeca.",
+      "parent": null
+    },
+    {
+      "id": "pylorus",
+      "name": "Gut junction",
+      "term": "Pyloric region",
+      "system": "digestive",
+      "source": "gut",
+      "evidence": "Species reference",
+      "short": "Waste-filtering tubes meet the gut here.",
+      "detail": "A constriction marks the boundary with the hindgut. The fine tubules are represented separately.",
+      "parent": null
+    },
+    {
+      "id": "hindgut",
+      "name": "Hindgut loop",
+      "term": "Ileum and colon",
+      "system": "digestive",
+      "source": "gut",
+      "evidence": "Species reference",
+      "short": "Follow the bend behind the stomach.",
+      "detail": "The digestive tract runs mostly straight until this posterior convolution. The study found the ileum and colon difficult to distinguish externally.",
+      "parent": null
+    },
+    {
+      "id": "rectum",
+      "name": "Rectal chamber and pads",
+      "term": "Rectal ampulla and rectum",
+      "system": "digestive",
+      "source": "gut",
+      "evidence": "Species reference",
+      "short": "Six pads line the last enlarged chamber.",
+      "detail": "Lhoste described six ovoid glands before the short terminal rectum. They are grouped with the chamber here.",
+      "parent": null
+    },
+    {
+      "id": "tubules_l",
+      "name": "Left waste tubules",
+      "term": "Malpighian tubules",
+      "system": "excretory",
+      "source": "gut",
+      "evidence": "Species reference",
+      "short": "These fine tubes empty into the digestive tract.",
+      "detail": "Several representative paths show where waste fluid enters the gut. Exact tubule counts and coils are unresolved in this reconstruction.",
+      "parent": null
+    },
+    {
+      "id": "trachea_l",
+      "name": "Left body airways",
+      "term": "Thoracic and abdominal tracheae",
+      "system": "respiratory",
+      "source": "air",
+      "evidence": "Species reference",
+      "short": "Air follows branching trunks to the organs and the pincer muscles.",
+      "detail": "Herhold and colleagues traced these airways by micro-CT. Anterior and posterior branches run in different directions; the left posterior loop extends farther. Only major routes are shown.",
+      "parent": null
+    },
+    {
+      "id": "head_air_l",
+      "name": "Left head airways",
+      "term": "Cervical and cephalic tracheae",
+      "system": "respiratory",
+      "source": "air",
+      "evidence": "Species reference",
+      "short": "Two main air routes enter each side of the head.",
+      "detail": "The dorsal cervical trunks approach one another at the neck, then turn outward. Selected branches continue to the eyes, mouth and antennal bases.",
+      "parent": null
+    },
+    {
+      "id": "testis_l",
+      "name": "Left testis",
+      "term": "Bilobed testis",
+      "system": "reproductive",
+      "source": "male",
+      "evidence": "Species reference",
+      "short": "This paired organ makes sperm.",
+      "detail": "Hudson describes spindle-shaped testes with two lobes. Relative position and fullness are reconstructed rather than measured in the photographed individual.",
+      "parent": null
+    },
+    {
+      "id": "sperm_duct_l",
+      "name": "Left sperm duct",
+      "term": "Vas deferens",
+      "system": "reproductive",
+      "source": "repro",
+      "evidence": "Species reference",
+      "short": "This duct carries sperm away from the testis.",
+      "detail": "The paired ducts converge toward the storage organ. The exact course of each duct is illustrative.",
+      "parent": null
+    },
+    {
+      "id": "adductor_l",
+      "name": "Left jaw-closing muscle",
+      "term": "Craniomandibularis internus",
+      "system": "muscular",
+      "source": "head",
+      "evidence": "Species reference",
+      "short": "This muscle pulls the jaw inward.",
+      "detail": "Bundles run from the head capsule toward the mandibular tendon. The bundles stand for the larger attachment field shown by Neubert and colleagues.",
+      "parent": null
+    },
+    {
+      "id": "cercal_muscle_l",
+      "name": "Left pincer muscle group",
+      "term": "Cercal musculature",
+      "system": "muscular",
+      "source": "air",
+      "evidence": "Comparative reconstruction",
+      "short": "Muscles inside the tail pull on the pincer base.",
+      "detail": "The scan describes dense air supply to the cercal muscles in posterior segments. Fiber paths and bundle thickness here are comparative.",
+      "parent": null
+    },
+    {
+      "id": "glands_l",
+      "name": "Left defensive gland sacs",
+      "term": "Tergal gland reservoirs",
+      "system": "glandular",
+      "source": "glands",
+      "evidence": "Species reference",
+      "short": "Two little sacs on this side open along the back plates.",
+      "detail": "Adult dissections locate one pair of sacs beneath each of the third and fourth tergites, with outlets at their rear margins.",
+      "parent": null
+    },
+    {
+      "id": "fat_l",
+      "name": "Left fat body",
+      "term": "Peripheral fat body",
+      "system": "storage",
+      "source": "fat",
+      "evidence": "Comparative reconstruction",
+      "short": "These lobes store reserves for growth and activity.",
+      "detail": "Their dispersed position under the body wall follows general insect anatomy. Their individual sizes and arrangement are schematic.",
+      "parent": null
+    },
+    {
+      "id": "tubules_r",
+      "name": "Right waste tubules",
+      "term": "Malpighian tubules",
+      "system": "excretory",
+      "source": "gut",
+      "evidence": "Species reference",
+      "short": "These fine tubes empty into the digestive tract.",
+      "detail": "Several representative paths show where waste fluid enters the gut. Exact tubule counts and coils are unresolved in this reconstruction.",
+      "parent": null
+    },
+    {
+      "id": "trachea_r",
+      "name": "Right body airways",
+      "term": "Thoracic and abdominal tracheae",
+      "system": "respiratory",
+      "source": "air",
+      "evidence": "Species reference",
+      "short": "Air follows branching trunks to the organs and the pincer muscles.",
+      "detail": "Herhold and colleagues traced these airways by micro-CT. Anterior and posterior branches run in different directions; the left posterior loop extends farther. Only major routes are shown.",
+      "parent": null
+    },
+    {
+      "id": "head_air_r",
+      "name": "Right head airways",
+      "term": "Cervical and cephalic tracheae",
+      "system": "respiratory",
+      "source": "air",
+      "evidence": "Species reference",
+      "short": "Two main air routes enter each side of the head.",
+      "detail": "The dorsal cervical trunks approach one another at the neck, then turn outward. Selected branches continue to the eyes, mouth and antennal bases.",
+      "parent": null
+    },
+    {
+      "id": "testis_r",
+      "name": "Right testis",
+      "term": "Bilobed testis",
+      "system": "reproductive",
+      "source": "male",
+      "evidence": "Species reference",
+      "short": "This paired organ makes sperm.",
+      "detail": "Hudson describes spindle-shaped testes with two lobes. Relative position and fullness are reconstructed rather than measured in the photographed individual.",
+      "parent": null
+    },
+    {
+      "id": "sperm_duct_r",
+      "name": "Right sperm duct",
+      "term": "Vas deferens",
+      "system": "reproductive",
+      "source": "repro",
+      "evidence": "Species reference",
+      "short": "This duct carries sperm away from the testis.",
+      "detail": "The paired ducts converge toward the storage organ. The exact course of each duct is illustrative.",
+      "parent": null
+    },
+    {
+      "id": "adductor_r",
+      "name": "Right jaw-closing muscle",
+      "term": "Craniomandibularis internus",
+      "system": "muscular",
+      "source": "head",
+      "evidence": "Species reference",
+      "short": "This muscle pulls the jaw inward.",
+      "detail": "Bundles run from the head capsule toward the mandibular tendon. The bundles stand for the larger attachment field shown by Neubert and colleagues.",
+      "parent": null
+    },
+    {
+      "id": "cercal_muscle_r",
+      "name": "Right pincer muscle group",
+      "term": "Cercal musculature",
+      "system": "muscular",
+      "source": "air",
+      "evidence": "Comparative reconstruction",
+      "short": "Muscles inside the tail pull on the pincer base.",
+      "detail": "The scan describes dense air supply to the cercal muscles in posterior segments. Fiber paths and bundle thickness here are comparative.",
+      "parent": null
+    },
+    {
+      "id": "glands_r",
+      "name": "Right defensive gland sacs",
+      "term": "Tergal gland reservoirs",
+      "system": "glandular",
+      "source": "glands",
+      "evidence": "Species reference",
+      "short": "Two little sacs on this side open along the back plates.",
+      "detail": "Adult dissections locate one pair of sacs beneath each of the third and fourth tergites, with outlets at their rear margins.",
+      "parent": null
+    },
+    {
+      "id": "fat_r",
+      "name": "Right fat body",
+      "term": "Peripheral fat body",
+      "system": "storage",
+      "source": "fat",
+      "evidence": "Comparative reconstruction",
+      "short": "These lobes store reserves for growth and activity.",
+      "detail": "Their dispersed position under the body wall follows general insect anatomy. Their individual sizes and arrangement are schematic.",
+      "parent": null
+    },
+    {
+      "id": "vesicle",
+      "name": "Sperm-storage sac",
+      "term": "Seminal vesicle",
+      "system": "reproductive",
+      "source": "repro",
+      "evidence": "Species reference",
+      "short": "Sperm can be held here before transfer.",
+      "detail": "The storage organ is connected to the ducts. Its volume and fill state are illustrative.",
+      "parent": null
+    },
+    {
+      "id": "ejaculatory_duct",
+      "name": "Terminal sperm duct",
+      "term": "Ejaculatory duct",
+      "system": "reproductive",
+      "source": "male",
+      "evidence": "Species reference",
+      "short": "This duct runs toward the terminal reproductive structures.",
+      "detail": "The posterior passage is represented as one connection. The detailed copulatory apparatus is outside this reconstruction.",
+      "parent": null
+    },
+    {
+      "id": "heart",
+      "name": "Dorsal heart and aorta",
+      "term": "Dorsal vessel",
+      "system": "circulatory",
+      "source": "heart",
+      "evidence": "Comparative reconstruction",
+      "short": "This long vessel moves hemolymph forward.",
+      "detail": "The abdominal heart lies dorsally and continues as a narrower aorta toward the head. Chamber boundaries are schematic.",
+      "parent": null
+    },
+    {
+      "id": "brain",
+      "name": "Brain and visual lobes",
+      "term": "Supraoesophageal ganglion",
+      "system": "nervous",
+      "source": "head",
+      "evidence": "Species reference",
+      "short": "Signals from the eyes and feelers reach the brain.",
+      "detail": "The central brain lies above the front of the gut. The optic lobes extend toward the compound eyes.",
+      "parent": null
+    },
+    {
+      "id": "subbrain",
+      "name": "Lower head ganglion",
+      "term": "Suboesophageal ganglion",
+      "system": "nervous",
+      "source": "head",
+      "evidence": "Species reference",
+      "short": "This nerve center sits below the food passage.",
+      "detail": "Connections pass down around the oesophagus and link the brain with the lower ganglion and the ventral nervous system.",
+      "parent": null
+    },
+    {
+      "id": "cord",
+      "name": "Ventral nerve cord",
+      "term": "Ventral connectives and ganglia",
+      "system": "nervous",
+      "source": "nerve",
+      "evidence": "Comparative reconstruction",
+      "short": "These connections run along the underside of the body.",
+      "detail": "The enlarged thoracic ganglia represent nerve centers associated with the legs. Posterior spacing and branches are a comparative reconstruction.",
+      "parent": null
+    },
+    {
+      "id": "tentorium",
+      "name": "Inner head brace",
+      "term": "Tentorium",
+      "system": "support",
+      "source": "head",
+      "evidence": "Species reference",
+      "short": "A cuticular frame inside the head anchors muscles.",
+      "detail": "The anterior and posterior arms meet at the corpotentorium. This model simplifies the arms documented in figure 3.",
+      "parent": null
+    }
+  ],
+  "view": {
+    "radius": 8.9,
+    "target": [
+      0,
+      1.0,
+      -0.35
+    ],
+    "floor": 0,
+    "direction": [
+      -1.2,
+      1.27,
+      -0.57
+    ],
+    "interiorFrameScale": 0.73,
+    "openingMargin": 0.16,
+    "narrowLabelRails": true
+  },
+  "observation": {
+    "identification": "The UC IPM reference is labeled an adult male European earwig. This example uses the same animal as the earlier comparison.",
+    "visible": "The photograph shows paired curved forceps, exposed abdominal plates, abbreviated forewings and pale legs.",
+    "reconstructed": "Dissections inform the digestive and reproductive organs, head structures and gland locations. Airway routes follow published micro-CT descriptions.",
+    "unresolved": "Organ shape and placement are illustrative. No internal scan of the photographed individual exists in this build. Fine branches, full muscle inventory, tubule counts and the complete genital apparatus remain unresolved."
+  },
+  "fieldNotes": [
+    {
+      "topic": "Anatomy review",
+      "text": "Reference-based educational reconstruction. Individual dimensions, complete anatomical coverage and expert acceptance remain unverified.",
+      "source": "gut"
+    },
+    {
+      "topic": "Behavior",
+      "text": "Earwigs shelter in crevices and forage at night. The forceps can be opened in defense; the sequence slows the movements for observation.",
+      "source": "adult"
+    }
+  ],
+  "behavior": {
+    "clip": "AN_Earwig_SenseWalkDisplay",
+    "duration": 8,
+    "frameScale": 1.15,
+    "target": [
+      0,
+      1.0,
+      -1.15
+    ],
+    "actions": [
+      {
+        "name": "Sweep the feelers",
+        "start": 0,
+        "note": "Follow the two antennae as their tips trace different arcs."
+      },
+      {
+        "name": "Walk forward",
+        "start": 2.25,
+        "note": "Watch one foot stay planted while the opposite group of legs swings forward."
+      },
+      {
+        "name": "Open the forceps",
+        "start": 5.75,
+        "note": "The paired pincers spread from their bases, pause and close again."
+      }
+    ],
+    "references": [
+      [
+        "Adult anatomy and forceps use · University of Florida",
+        "https://ask.ifas.ufl.edu/publication/IN875"
+      ],
+      [
+        "Observed use of the abdomen and pincers · Eisner",
+        "https://groups.csail.mit.edu/mac/projects/psyche/67/67-062.html"
+      ]
+    ]
+  }
+}
